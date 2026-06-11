@@ -1,0 +1,1887 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Counterfeit Loop — A Field Guide to Wanting</title>
+<meta name="description" content="You are not addicted to your phone. You are starved of integration — and there's an economy built to keep you that way. Read the short version, or open it all the way down." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THEME TOKENS — flip the whole site by changing data-theme
+   ============================================================ */
+:root {
+  --display: 'Fraunces', 'EB Garamond', Georgia, serif;
+  --read: 'Fraunces', 'EB Garamond', Georgia, serif;
+  --ui: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --measure: 34rem;
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+html[data-theme="dark"] {
+  --bg: #0E0D0B;
+  --bg-deep: #080706;
+  --card: #16130F;
+  --card-soft: #120F0C;
+  --ink: #F2EBDC;
+  --ink-dim: #9A9384;
+  --ink-faint: #5A544B;
+  --rule: rgba(242, 235, 220, 0.09);
+  --rule-strong: rgba(242, 235, 220, 0.20);
+  --accent: #F3651C;
+  --accent-deep: #C8702C;
+  --accent-soft: rgba(243, 101, 28, 0.13);
+  --gold: #d4a256;
+  --shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.9);
+}
+
+html[data-theme="light"] {
+  --bg: #f4ede0;
+  --bg-deep: #ece2cd;
+  --card: #fbf6ec;
+  --card-soft: #f0e7d6;
+  --ink: #211913;
+  --ink-dim: #5b4d40;
+  --ink-faint: #9a8a73;
+  --rule: rgba(33, 25, 19, 0.10);
+  --rule-strong: rgba(33, 25, 19, 0.22);
+  --accent: #c5481a;
+  --accent-deep: #9a3a18;
+  --accent-soft: rgba(197, 72, 26, 0.10);
+  --gold: #9a7a3a;
+  --shadow: 0 24px 60px -38px rgba(74, 53, 38, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--read);
+  font-optical-sizing: auto;
+  line-height: 1.72;
+  font-size: 1.18rem;
+  letter-spacing: 0.003em;
+  transition: background 0.5s var(--ease), color 0.5s var(--ease);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg-deep);
+}
+
+/* atmospheric grain + glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(120% 80% at 80% -10%, var(--accent-soft), transparent 55%),
+    radial-gradient(90% 60% at 0% 110%, var(--accent-soft), transparent 60%);
+  opacity: 0.8;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem clamp(1.1rem, 4vw, 3rem);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.brand {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.brand b {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn {
+  font-family: var(--ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-dim);
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.42rem 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.25s var(--ease);
+}
+
+.btn:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ============================================================
+   STEPPER NAV (the loop)
+   ============================================================ */
+.stepper {
+  position: sticky;
+  top: 56px;
+  z-index: 30;
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.stepper::-webkit-scrollbar {
+  display: none;
+}
+
+.stepper-inner {
+  display: flex;
+  gap: 0;
+  min-width: max-content;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(0.6rem, 3vw, 2rem);
+}
+
+.step {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: 0.7rem 0.95rem;
+  white-space: nowrap;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s var(--ease);
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.step span {
+  color: var(--accent);
+  opacity: 0.55;
+}
+
+.step:hover {
+  color: var(--ink-dim);
+}
+
+.step.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+.step.active span {
+  opacity: 1;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(1.1rem, 5vw, 2rem);
+}
+
+.col {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+section {
+  padding: clamp(3.5rem, 9vw, 7rem) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+.short {
+  text-align: center;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent-soft) 60%, transparent), transparent 70%);
+}
+
+.short .col {
+  max-width: 40rem;
+}
+
+.short .eyebrow {
+  justify-content: center;
+}
+
+.short .expanders {
+  text-align: left;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 380;
+  line-height: 1.06;
+  letter-spacing: -0.012em;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 5.2vw, 3rem);
+  margin-bottom: 1.4rem;
+}
+
+h2 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 3.4vw, 1.7rem);
+  margin-bottom: 0.9rem;
+  font-weight: 400;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--ink);
+}
+
+p.lede {
+  font-size: 1.32rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.dim {
+  color: var(--ink-dim);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+html[data-theme="dark"] strong {
+  color: var(--gold);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding-top: clamp(4rem, 12vw, 9rem);
+  padding-bottom: clamp(3rem, 8vw, 6rem);
+  text-align: left;
+}
+
+.hero .col {
+  max-width: 46rem;
+}
+
+.hero-title {
+  font-family: var(--display);
+  font-weight: 340;
+  font-size: clamp(3.2rem, 13vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin: 0.4rem 0 1.6rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 380;
+}
+
+.hero-thesis {
+  font-size: clamp(1.25rem, 3.4vw, 1.7rem);
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 38rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero-flag {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+}
+
+.hero-sub {
+  font-family: var(--ui);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  max-width: 34rem;
+}
+
+.hero-meta {
+  margin-top: 2.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.4rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.hero-meta b {
+  color: var(--ink-dim);
+  font-weight: 400;
+}
+
+/* ============================================================
+   DISCLOSURE (expanders)
+   ============================================================ */
+.expanders {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.exp {
+  border: 1px solid var(--rule-strong);
+  border-radius: 12px;
+  background: var(--card-soft);
+  overflow: clip;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.exp[data-open="true"] {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--rule-strong));
+  background: var(--card);
+}
+
+.exp-head {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.95rem 1.1rem;
+  font-family: var(--ui);
+  color: var(--ink);
+}
+
+.exp-tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.26rem 0.55rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.exp-tag.scripture {
+  background: color-mix(in srgb, var(--gold) 16%, transparent);
+  color: var(--gold);
+}
+
+html[data-theme="light"] .exp-tag.scripture {
+  color: var(--accent-deep);
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+}
+
+.exp-tag.concrete {
+  background: color-mix(in srgb, var(--ink-dim) 14%, transparent);
+  color: var(--ink-dim);
+}
+
+.exp-label {
+  flex: 1;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.exp-chev {
+  width: 16px;
+  height: 16px;
+  color: var(--ink-faint);
+  transition: transform 0.35s var(--ease);
+  flex-shrink: 0;
+}
+
+.exp[data-open="true"] .exp-chev {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+
+.exp-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease);
+}
+
+.exp[data-open="true"] .exp-body {
+  grid-template-rows: 1fr;
+}
+
+.exp-inner {
+  overflow: hidden;
+}
+
+.exp-content {
+  padding: 0.2rem 1.3rem 1.4rem;
+  font-size: 1.06rem;
+  line-height: 1.68;
+}
+
+.exp-content p:last-child {
+  margin-bottom: 0;
+}
+
+.exp-content h4 {
+  font-family: var(--ui);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 1.2rem 0 0.5rem;
+}
+
+/* scripture block */
+.verse {
+  border-left: 2px solid var(--accent);
+  padding: 0.1rem 0 0.1rem 1.1rem;
+  margin: 1.1rem 0;
+}
+
+.verse p {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.verse cite {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* unbundling / list rows */
+.swap {
+  font-family: var(--ui);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+
+.swap b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.swap span {
+  color: var(--accent);
+}
+
+.swap em {
+  color: var(--ink-dim);
+  font-style: normal;
+}
+
+/* ============================================================
+   SIX SLOTS — interactive
+   ============================================================ */
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.slot {
+  border: 1px solid var(--rule-strong);
+  border-radius: 14px;
+  background: var(--card-soft);
+  padding: 1.2rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.slot:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.slot[data-open="true"] {
+  background: var(--card);
+  border-color: var(--accent);
+  grid-column: 1 / -1;
+  cursor: default;
+  box-shadow: var(--shadow);
+}
+
+.slot-num {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.slot-name {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0.3rem 0 0.4rem;
+}
+
+.slot-need {
+  font-family: var(--ui);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+
+.slot-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.42s var(--ease);
+}
+
+.slot[data-open="true"] .slot-detail {
+  grid-template-rows: 1fr;
+}
+
+.slot-detail-in {
+  overflow: hidden;
+}
+
+.slot-cols {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.2rem;
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+
+@media (min-width: 620px) {
+  .slot[data-open="true"] .slot-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.slot-col h5 {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.slot-col.real h5 {
+  color: var(--gold);
+}
+
+html[data-theme="light"] .slot-col.real h5 {
+  color: var(--accent-deep);
+}
+
+.slot-col.fake h5 {
+  color: var(--ink-faint);
+}
+
+.slot-col p {
+  font-family: var(--ui);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* per-slot color */
+.slot {
+  --slot: var(--accent);
+}
+
+.slot::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--slot);
+}
+
+.slot .slot-num {
+  color: var(--slot);
+}
+
+.slot .slot-hint {
+  color: var(--slot);
+  opacity: 0.55;
+}
+
+.slot[data-open="true"] .slot-hint {
+  opacity: 1;
+}
+
+.slot:hover {
+  border-color: var(--slot);
+}
+
+.slot[data-open="true"] {
+  border-color: var(--slot);
+  box-shadow: 0 26px 64px -42px color-mix(in srgb, var(--slot) 70%, transparent);
+}
+
+.slot-col.real h5 {
+  color: var(--slot);
+}
+
+.slot-industries {
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.slot-industries h5 {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slot);
+  margin-bottom: 0.5rem;
+}
+
+.slot-industries p {
+  font-family: var(--ui);
+  font-size: 0.92rem;
+  line-height: 1.58;
+  color: var(--ink-dim);
+  margin: 0;
+}
+
+.slot-industries b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.slot-egs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+
+.slot-egs span {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.01em;
+  padding: 0.3rem 0.62rem;
+  border-radius: 999px;
+  color: var(--slot);
+  background: color-mix(in srgb, var(--slot) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--slot) 34%, transparent);
+}
+
+/* epigraph */
+.epigraph {
+  padding: clamp(2.4rem, 6vw, 3.8rem) 0;
+  text-align: center;
+}
+
+.epigraph .col {
+  max-width: 42rem;
+}
+
+.verse.big {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.verse.big p {
+  font-size: clamp(1.3rem, 3.6vw, 1.9rem);
+  line-height: 1.38;
+}
+
+.verse.big cite {
+  display: block;
+  margin-top: 0.7rem;
+}
+
+.slot-col.fake p {
+  color: var(--ink-dim);
+}
+
+.slot-hint {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: var(--ink-faint);
+  transition: all 0.3s var(--ease);
+}
+
+.slot[data-open="true"] .slot-hint {
+  color: var(--accent);
+  transform: rotate(45deg);
+}
+
+/* ============================================================
+   TIMELINE (across a life)
+   ============================================================ */
+.timeline {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tl-row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1.1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+
+.tl-row:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.tl-age {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  padding-top: 0.15rem;
+}
+
+.tl-row p {
+  font-family: var(--ui);
+  font-size: 1rem;
+  line-height: 1.58;
+  margin: 0;
+  color: var(--ink-dim);
+}
+
+.tl-row p b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SUBSCRIPTION MODEL panel
+   ============================================================ */
+.sub-model {
+  margin-top: 1.6rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 16px;
+  overflow: clip;
+  background: var(--card-soft);
+}
+
+.sm-row {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.sm-row:first-child {
+  border-top: none;
+}
+
+.sm-key {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 1rem 1.2rem;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+}
+
+.sm-val {
+  padding: 1rem 1.2rem;
+  font-family: var(--ui);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+@media (max-width: 540px) {
+  .sm-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sm-key {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.4rem;
+  }
+}
+
+/* ============================================================
+   PRACTICES
+   ============================================================ */
+.practices {
+  counter-reset: prac;
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.prac {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 1.1rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.prac:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.prac::before {
+  counter-increment: prac;
+  content: counter(prac, lower-roman);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  padding-top: 0.2rem;
+}
+
+.prac h4 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.prac p {
+  font-family: var(--ui);
+  font-size: 0.96rem;
+  line-height: 1.56;
+  color: var(--ink-dim);
+  margin: 0;
+}
+
+.starter {
+  margin-top: 2rem;
+  padding: 1.6rem 1.7rem;
+  border-radius: 16px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.starter h4 {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+
+.starter ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.starter li {
+  font-family: var(--ui);
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--ink);
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.starter li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ============================================================
+   LOOP RECAP diagram
+   ============================================================ */
+.loop-frame {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.lf {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  align-items: start;
+  position: relative;
+}
+
+.lf:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(0.05rem + 6px); /* center of the 13px dot (0.05rem margin + half its width), minus half the 1px line */
+  top: 2.1rem;
+  bottom: -0.4rem;
+  width: 1px;
+  background: var(--rule-strong);
+}
+
+.lf-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  margin: 0.45rem 0 0 0.05rem;
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
+}
+
+.lf-dot.solid {
+  background: var(--accent);
+}
+
+.lf b {
+  font-family: var(--display);
+  font-size: 1.18rem;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.lf span {
+  font-family: var(--ui);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+
+/* ============================================================
+   OBJECTIONS
+   ============================================================ */
+.objections-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.objection {
+  border: 1px solid var(--rule-strong);
+  border-radius: 14px;
+  background: var(--card-soft);
+  padding: 1.3rem 1.4rem;
+  border-left: 3px solid var(--accent);
+}
+
+.objection .challenge {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: 0.7rem;
+}
+
+.objection .challenge::before {
+  content: "“";
+  color: var(--accent);
+}
+
+.objection .challenge::after {
+  content: "”";
+  color: var(--accent);
+}
+
+.objection .reply {
+  font-family: var(--ui);
+  font-size: 1.02rem;
+  line-height: 1.62;
+  color: var(--ink-dim);
+  margin: 0;
+}
+
+.objection .reply b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.objection .reply .tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.45rem;
+}
+
+/* ============================================================
+   CLOSE
+   ============================================================ */
+.close {
+  text-align: center;
+  padding: clamp(4rem, 11vw, 8rem) 0;
+}
+
+.close .col {
+  max-width: 40rem;
+}
+
+.close-line {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.6rem;
+}
+
+.close-line em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.close p {
+  font-family: var(--ui);
+  color: var(--ink-dim);
+  font-size: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem 3.5rem;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="brand">The&nbsp;Counterfeit&nbsp;<b>Loop</b></div>
+  <div class="controls">
+    <button class="btn" id="readmode" aria-pressed="false" title="Expand or collapse every section">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
+      <span id="readmode-label">Open all</span>
+    </button>
+    <button class="btn" id="theme" aria-label="Toggle light and dark mode" title="Toggle light / dark">
+      <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- STEPPER -->
+<nav class="stepper" aria-label="The loop">
+  <div class="stepper-inner" id="stepper">
+    <a class="step" href="#design"><span>01</span> 🧬 The design</a>
+    <a class="step" href="#slots"><span>02</span> 🔌 The slots</a>
+    <a class="step" href="#split"><span>03</span> ✂️ The split</a>
+    <a class="step" href="#market"><span>04</span> 🏷️ The market</a>
+    <a class="step" href="#counterfeit"><span>05</span> 🎭 The counterfeit</a>
+    <a class="step" href="#dependency"><span>06</span> ⛓️ Dependency</a>
+    <a class="step" href="#wayback"><span>07</span> 🧭 The way back</a>
+    <a class="step" href="#objections"><span>08</span> 🤔 Objections</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="col">
+      <div class="eyebrow">A field guide to wanting · MMXXVI</div>
+      <h1 class="hero-title">📱 You are not<br>addicted to<br>your <em>phone.</em></h1>
+      <p class="hero-thesis">You are starved of <strong>integration</strong> — and there is an entire economy built to keep you that way.</p>
+      <p class="hero-flag">This starts with your phone. It does not end there.</p>
+      <p class="hero-sub">Why everything feels urgent and empty at the same time, told as one loop: the real needs inside you, the cheap things that rush in to fill them, and the older answer underneath. Read the short version straight through. Open the panels when you want the verses, the examples, and the full framework.</p>
+      <div class="hero-meta">
+        <span><b>Seven stages</b></span>
+        <span>≈ 7 min read · longer if you open it all</span>
+        <span>Tap <b>“Open all”</b> for the full text</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EPIGRAPH -->
+  <section class="epigraph">
+    <div class="col">
+      <div class="verse big"><p>“They have forsaken me, the fountain of living waters, and hewed out cisterns for themselves — broken cisterns that can hold no water.”</p><cite>Jeremiah 2:13</cite></div>
+    </div>
+  </section>
+
+  <!-- THE SHORT VERSION -->
+  <section id="short" class="short">
+    <div class="col">
+      <div class="eyebrow">The short version</div>
+      <h2>🌱 Honestly? It's <em>not that complicated.</em></h2>
+      <p class="lede">You have real needs. You were made to depend — on God, on people, on a place. The world keeps selling you cheap substitutes that never fill them. Jesus is the source all of it is counterfeiting. That's the whole thing.</p>
+      <p class="dim">You could stop right there — that's the gospel of it. But if you want to see exactly how the substitution works, and how to walk back out of it, that's what the rest is for.</p>
+      <div class="expanders">
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag">If you wanna learn more</span>
+            <span class="exp-label">In the beginning…</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <p>In the beginning it was whole. One garden where work and worship and body and people and meaning were the same life — every need met by its proper source, all at once.</p>
+            <p>Then it fractured. First in Eden, when the human hid and the four communions broke. Then again, much later, when modernity pulled every need apart and handed each one to a separate vendor. And the vendors learned the trick that runs the whole machine: a half-met need is a returning customer. So they sell relief that never quite restores.</p>
+            <p>The way back was never a better strategy or a cleaner app. It's a person, a table, a people, a rhythm — dependence put back where it belongs. The seven stages below trace exactly how the break happened, and how it heals.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE HUNT (premise) -->
+  <section id="hunt">
+    <div class="col">
+      <div class="eyebrow">The premise</div>
+      <h2>🦌 The looking feels better than the <em>finding.</em></h2>
+      <p class="lede">You go hunting for new music. Twenty minutes in, you've found three good songs — and you're still scrolling. You don't stop. The looking feels better than the finding.</p>
+      <p>It's the same loop as doomscrolling. The same loop as rerolling an AI prompt. The same loop as a slot machine. Your dopamine system tracks <em>surprise</em>, not reward: it spikes for a cue that might pay off, and hardest of all when the odds are genuinely uncertain. A guaranteed payoff goes flat. An uncertain one keeps the system lit on every attempt. The resolution is never the point. The seeking is the point.</p>
+      <p>Real hunting works that way too — but it has a floor. The herd moves on, night falls, you bag the deer and go home. Infinite scroll has no floor. The hunt was never meant to run forever.</p>
+
+      <div class="expanders">
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag scripture">In Scripture</span>
+            <span class="exp-label">Solomon noticed this 3,000 years ago</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <div class="verse"><p>“All things are full of weariness; a man cannot utter it; the eye is not satisfied with seeing, nor the ear filled with hearing.”</p><cite>Ecclesiastes 1:8</cite></div>
+            <p>The eye doesn't fill. The ear doesn't fill. The hunger that drives the hunt is not actually a hunger for the prey.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 THE DESIGN -->
+  <section id="design">
+    <div class="col">
+      <div class="eyebrow">01 · The design</div>
+      <h2>🧬 The slots are <em>real.</em> They were the point.</h2>
+      <p class="lede">Inside you there are slots — recurring needs: connection, rest, focus, intimacy, meaning, mastery, and slower ones that run on the scale of years, like purpose and transcendence.</p>
+      <p>They don't go away when you ignore them. They get louder. Then they get quiet — not because the need was met, but because something cheap moved in. The slots aren't a problem to be solved. They're the design. <strong>You were built to be filled.</strong> The only real question is what's getting in.</p>
+      <p class="dim">The original story doesn't begin with people wanting bad things. It begins with people having real needs, and a world arranged so those needs were met by their proper sources, all at once. The word for that isn't self-sufficiency. It's <em>rightly ordered dependence</em>.</p>
+
+      <div class="expanders">
+        <div class="exp" data-open="true">
+          <button class="exp-head" aria-expanded="true">
+            <span class="exp-tag">Go deeper</span>
+            <span class="exp-label">The original design was rightly ordered dependence</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <p>Scripture never treats human needs as embarrassing. God gives the first humans a garden, food, work, marriage, place, rhythm, speech, blessing, presence. The first person is placed in a garden to “work it and keep it” — work and worship and body and place and community and meaning, all in one frame. No separate gym, no separate temple, no separate marketplace.</p>
+            <p>The slots are filled by their proper sources, in concert. The integration <em>is</em> the architecture. Hold onto that baseline — everything that follows is a story of separation, and the long road back.</p>
+          </div></div></div>
+        </div>
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag scripture">In Scripture</span>
+            <span class="exp-label">Work and keep it · hunger for the right thing</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <div class="verse"><p>“The Lord God took the man and put him in the garden of Eden to work it and keep it.”</p><cite>Genesis 2:15</cite></div>
+            <div class="verse"><p>“Blessed are those who hunger and thirst for righteousness, for they shall be satisfied.”</p><cite>Matthew 5:6</cite></div>
+            <p>Notice what Jesus does <em>not</em> say. He does not tell people to stop hungering. He tells them to hunger for the right thing. The hunger is not the problem. The hunger is the engine. Pointed at the wrong target, it eats you.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SIX SLOTS (interactive) -->
+  <section id="slots">
+    <div class="col">
+      <div class="eyebrow">02 · Meet your slots</div>
+      <h2>🔌 Real fillers nourish. Counterfeits just <em>quiet the alarm.</em></h2>
+      <p>Six of the loudest slots. Tap any one to see what actually fills it — and the cheap thing that learned to imitate it.</p>
+    </div>
+    <div class="slots-grid" id="slotsGrid">
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#DA5A2E">
+        <span class="slot-hint">+</span>
+        <div class="slot-num">SLOT 01</div>
+        <div class="slot-name">Connection</div>
+        <div class="slot-need">The need to be in a room with people who know your name.</div>
+        <div class="slot-detail"><div class="slot-detail-in">
+          <div class="slot-cols">
+            <div class="slot-col real"><h5>Real filler</h5><p>Friends on a couch at 1am talking about nothing. Family laughing in the kitchen. A team that knows your jokes. A neighbor who waves.</p></div>
+            <div class="slot-col fake"><h5>Counterfeit</h5><p>400 followers. Twelve group chats you scroll but never speak in. A streamer whose name you know — who doesn't know yours. Reaction emojis. A “close friends” list of people you've never met.</p></div>
+          </div>
+          <div class="slot-industries"><h5>The industries that sell to it</h5><p><b>Social platforms, creator memberships, parasocial streaming</b> — built to monetize the gap where a village used to be. The metric is engagement, not friendship, because a satisfied lonely person stops scrolling.</p>
+            <div class="slot-egs"><span>Instagram</span><span>TikTok</span><span>Twitch</span><span>Discord</span><span>OnlyFans</span><span>group chats</span></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#2E938A">
+        <span class="slot-hint">+</span>
+        <div class="slot-num">SLOT 02</div>
+        <div class="slot-name">Rest</div>
+        <div class="slot-need">The need for your nervous system to downshift.</div>
+        <div class="slot-detail"><div class="slot-detail-in">
+          <div class="slot-cols">
+            <div class="slot-col real"><h5>Real filler</h5><p>Lying on the grass with nothing in your hand. A walk where you don't look down once. Being bored long enough that your brain settles. A nap with the phone in another room.</p></div>
+            <div class="slot-col fake"><h5>Counterfeit</h5><p>“Decompressing” with three hours of TikTok and ending up more tired than you started. Binge-watching past the point you enjoyed it. Sleepless scrolling. Falling asleep to a stranger's whisper.</p></div>
+          </div>
+          <div class="slot-industries"><h5>The industries that sell to it</h5><p><b>Streaming, meditation and sleep apps, the wellness-retreat economy</b> — rest got turned into a product you consume, which is exactly why it leaves you emptier.</p>
+            <div class="slot-egs"><span>Netflix</span><span>YouTube</span><span>TikTok</span><span>Calm</span><span>Headspace</span><span>doomscrolling</span></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#5076CC">
+        <span class="slot-hint">+</span>
+        <div class="slot-num">SLOT 03</div>
+        <div class="slot-name">Focus</div>
+        <div class="slot-need">The need for one thing to mean enough that you stay with it.</div>
+        <div class="slot-detail"><div class="slot-detail-in">
+          <div class="slot-cols">
+            <div class="slot-col real"><h5>Real filler</h5><p>An hour on something hard. A book that pulls you under. A song you listen to all the way through. A single open tab.</p></div>
+            <div class="slot-col fake"><h5>Counterfeit</h5><p>Forty-seven seconds on one screen before you switch. 73 tab switches. The feeling that today already ended and you didn't do any of it. Twelve half-watched videos. A podcast at 2× you can't remember.</p></div>
+          </div>
+          <div class="slot-industries"><h5>The industries that sell to it</h5><p><b>Productivity SaaS, “focus” apps, nootropics, course funnels</b> — one market sells you the cure for the distraction another market sells you.</p>
+            <div class="slot-egs"><span>Notion</span><span>Forest</span><span>MasterClass</span><span>nootropics</span><span>Pomodoro timers</span><span>lo-fi streams</span></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#B85187">
+        <span class="slot-hint">+</span>
+        <div class="slot-num">SLOT 04</div>
+        <div class="slot-name">Intimacy</div>
+        <div class="slot-need">The need to be fully seen, and not run from.</div>
+        <div class="slot-detail"><div class="slot-detail-in">
+          <div class="slot-cols">
+            <div class="slot-col real"><h5>Real filler</h5><p>Telling one person the thing you're scared they'll judge — and finding out they didn't. Being known across years. Someone who stays after the hard conversation.</p></div>
+            <div class="slot-col fake"><h5>Counterfeit</h5><p>Porn. An AI companion who agrees with everything. Trauma-dumping to strangers who never learn your name. Endless swiping. A situationship. DMs that simulate closeness at zero risk.</p></div>
+          </div>
+          <div class="slot-industries"><h5>The industries that sell to it</h5><p><b>Dating apps, the adult-content economy, AI-companion apps</b> — they sell the feeling of being wanted while quietly profiting from your never quite landing it. A matched user is a churned user.</p>
+            <div class="slot-egs"><span>Tinder</span><span>Hinge</span><span>porn</span><span>Replika</span><span>Character.AI</span><span>sexting</span></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#C68A2C">
+        <span class="slot-hint">+</span>
+        <div class="slot-num">SLOT 05</div>
+        <div class="slot-name">Meaning</div>
+        <div class="slot-need">The need to do something that would matter even if no one was watching.</div>
+        <div class="slot-detail"><div class="slot-detail-in">
+          <div class="slot-cols">
+            <div class="slot-col real"><h5>Real filler</h5><p>Building something real. Raising something. Serving something bigger than yourself. Faith you'd hold even if it cost you. Work that would matter unwatched.</p></div>
+            <div class="slot-col fake"><h5>Counterfeit</h5><p>Optimizing yourself. Picking a tribe to hate. Curating an identity instead of doing the work it describes. A personal brand with nothing underneath. Doomscrolling the news to feel “engaged.”</p></div>
+          </div>
+          <div class="slot-industries"><h5>The industries that sell to it</h5><p><b>The creator economy, self-optimization coaching, hustle culture</b> — purpose got unbundled into content and sold back to you as a course, a seminar, a membership that always points to the next tier.</p>
+            <div class="slot-egs"><span>LinkedIn</span><span>X takes</span><span>hustle podcasts</span><span>coaching programs</span><span>biohacking</span><span>personal brand</span></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#74953C">
+        <span class="slot-hint">+</span>
+        <div class="slot-num">SLOT 06</div>
+        <div class="slot-name">Mastery</div>
+        <div class="slot-need">The need to get better at something through your own effort.</div>
+        <div class="slot-detail"><div class="slot-detail-in">
+          <div class="slot-cols">
+            <div class="slot-col real"><h5>Real filler</h5><p>Six months on the same hard skill. A craft that's actually yours. Calluses, repetitions, slow obvious progress. Making one real thing.</p></div>
+            <div class="slot-col fake"><h5>Counterfeit</h5><p>Leveling up a game character. Watching someone else win on a stream. Reading about discipline instead of doing one hard thing. A 400-day streak that taught you nothing. Buying the gear instead of doing the reps.</p></div>
+          </div>
+          <div class="slot-industries"><h5>The industries that sell to it</h5><p><b>Gaming progression systems, gamified “learning,” fitness-app subscriptions</b> — they borrow the feeling of getting better and detach it from any real skill. The dopamine of mastery with none of the mastery.</p>
+            <div class="slot-egs"><span>Duolingo streaks</span><span>Fortnite battle pass</span><span>Skillshare</span><span>gym apps</span><span>idle games</span><span>YouTube how-tos</span></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 THE SPLIT -->
+  <section id="split">
+    <div class="col">
+      <div class="eyebrow">03 · The split</div>
+      <h2>✂️ Modernity broke the <em>integration</em> apart.</h2>
+      <p class="lede">For most of history the slots filled each other. One act — a hunt, a shared meal, embodied worship — fed the body, bonded the group, built competence, generated a story to tell that night, and put you in contact with something larger. The slots weren't really separate. They were facets of an integrated life.</p>
+      <p>Then it broke apart. Each slot got its own specialized industry, optimized to hit that one slot harder than anything in nature ever could — and stripped of everything else. Hyperpalatable food hits the taste slot at ten times the intensity of anything that grew, while delivering none of the connection or competence eating used to carry. Parasocial streams hit the connection slot at infinite availability with none of the touch. The result: every slot gets hit constantly by something engineered to hit <em>only</em> that slot — so every slot stays half-full forever. None of the signals are fake. They're just <strong>thin</strong>.</p>
+
+      <div class="expanders">
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag">Go deeper</span>
+            <span class="exp-label">Two fracture events: the Fall, then the factory</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <h4>The Fall — the first fragmentation</h4>
+            <p>Before the rupture, four relationships are intact: with God, with self, with neighbor, with creation. After, all four break in sequence. Adam hides from God. He sees he is naked and is ashamed — a self that now watches and judges itself. He blames Eve. Thorns and thistles turn the body and the land from gift to grind. The needs don't disappear; the integrated way of filling them is broken. A real desire gets detached from its rightful source. That's the pattern under everything.</p>
+            <h4>Babel — the first market</h4>
+            <p>Babel is the civilizational version: humanity says “let us make a name for ourselves” and integrates itself through its own project. Not because reach was wrong — but because the <em>sovereign self as its own integrator</em> is the original counterfeit at scale. It has never worked.</p>
+            <h4>Modernity industrialized it</h4>
+            <p>Post-Fall cultures held fragmentation together through ritual, place, kinship, and tradition. The modern West took that fragmentation and industrialized it. Activities that filled four or five needs at once got pulled apart and handed to specialized vendors. The fragmentation is spatial, too: one walk to buy bread used to fill five slots ambiently. Single-use zoning and the car killed that. The third places — barbershops, diners, post offices, taverns — where slot-overlap happened for free have largely disappeared. The need doesn't disappear. It just becomes easier to monetize.</p>
+          </div></div></div>
+        </div>
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag concrete">Make it concrete</span>
+            <span class="exp-label">What got unbundled, and into what</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <p class="swap"><b>Food</b> — movement + community + competence + meaning + body <span>→</span> <em>the gym, the restaurant, the Facebook group</em></p>
+            <p class="swap"><b>Music</b> — participation + belonging + competence + rhythm + memory <span>→</span> <em>solo consumption, made by professionals, encountered as content</em></p>
+            <p class="swap"><b>Apprenticeship</b> — competence + connection + attention + meaning <span>→</span> <em>classroom decoupled from outcome, office decoupled from people</em></p>
+            <p class="swap"><b>Early childhood</b> — touch + belonging + competence + meaning <span>→</span> <em>hospital + daycare + mom-fluencers + anxious parenting books</em></p>
+            <p class="swap"><b>Worship</b> — meaning + community + rest + body + belonging <span>→</span> <em>Sunday module + therapy + yoga + meditation apps</em></p>
+            <p class="swap"><b>Death &amp; grief</b> — touch + meaning + belonging + rest <span>→</span> <em>hospital death + funeral home + three-day bereavement leave</em></p>
+          </div></div></div>
+        </div>
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag scripture">In Scripture</span>
+            <span class="exp-label">The old word for this is exile</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <div class="verse"><p>“And they heard the sound of the Lord God walking in the garden in the cool of the day, and the man and his wife hid themselves from the presence of the Lord God among the trees of the garden.”</p><cite>Genesis 3:8</cite></div>
+            <p>The first picture of disintegration in the Bible is not a violent act. It's hiding. Withdrawal. Four communions — with God, with each other, with the body, with the created order — all rupture in a single chapter. Every form of modern alienation is a footnote on that scene.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 THE MARKET -->
+  <section id="market">
+    <div class="col">
+      <div class="eyebrow">04 · The market</div>
+      <h2>🏷️ The wound is the <em>business model.</em></h2>
+      <p class="lede">Once a need is cut off from its source, it becomes a market. Loneliness becomes a market. Insecurity, anxiety, body dissatisfaction, spiritual hunger, attention, identity confusion, burnout — each becomes something to sell to.</p>
+      <p>And here is the turn that explains everything: <strong>the system does not need to heal the wound.</strong> Not every business runs this way — plenty sell you something that genuinely helps and never need to see you again. But the ones built on your <em>attention</em> can't afford to: their revenue is your return. In that economy the wound <em>is</em> the business model, and a resolved person is a bad customer. So that market learns to offer relief without restoration — close enough to feel helpful, weak enough that the hunger comes back.</p>
+
+      <div class="expanders">
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag">Go deeper</span>
+            <span class="exp-label">What gets offered instead</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <p class="swap">Not bread, but <span>snacks.</span></p>
+            <p class="swap">Not belonging, but <span>followers.</span></p>
+            <p class="swap">Not wisdom, but <span>content.</span></p>
+            <p class="swap">Not worship, but <span>vibes.</span></p>
+            <p class="swap">Not repentance, but <span>self-acceptance.</span></p>
+            <p class="swap">Not healing, but <span>endless processing.</span></p>
+            <p class="swap">Not vocation, but <span>personal brand.</span></p>
+            <p class="swap">Not community, but <span>platform.</span></p>
+            <p class="swap">Not Sabbath, but <span>recovery hacks.</span></p>
+            <p class="swap">Not embodiment, but <span>optimization.</span></p>
+            <p style="margin-top:1.1rem">The substitute has to be close enough to feel helpful, and weak enough that the hunger returns. That is the counterfeit's craft.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 THE COUNTERFEIT -->
+  <section id="counterfeit">
+    <div class="col">
+      <div class="eyebrow">05 · The counterfeit</div>
+      <h2>🎭 It doesn't fail. That's the <em>danger.</em></h2>
+      <p class="lede">The deepest danger isn't that the counterfeit never works. It does work — partially, temporarily, chemically. That is precisely why people return.</p>
+      <p>Social media really does deliver a hit of connection. Pornography really does simulate intimacy. Comfort food really does soothe. Productivity systems really do create a moment of control. None of it is fake. So the only question that matters is the diagnostic one: does it <strong>restore</strong> you to a rightly ordered life, or does it make you dependent on the substitute? A remedy moves you toward wholeness. An anesthetic just lets you function while the wound stays.</p>
+
+      <div class="expanders">
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag">Go deeper</span>
+            <span class="exp-label">Remedy or anesthetic — the diagnostic question</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <p>Most of modern life is not designed to restore people. It's designed to keep them functional, stimulated, purchasing, scrolling, improving, confessing, comparing, optimizing — and returning. That's the whole craft: relief that leaves the underlying need exactly as empty as it found it, so you'll be back in twenty minutes.</p>
+            <p>The test cuts cleanly. After the thing, are you more capable of the real version, or less? Does silence get easier, or more unbearable? Does real community feel more possible, or more demanding? The counterfeit always trends one direction.</p>
+          </div></div></div>
+        </div>
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag scripture">In Scripture</span>
+            <span class="exp-label">Broken cisterns that hold no water</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <div class="verse"><p>“My people have committed two evils: they have forsaken me, the fountain of living waters, and hewed out cisterns for themselves, broken cisterns that can hold no water.”</p><cite>Jeremiah 2:13</cite></div>
+            <p>This is the whole loop in one verse, written 2,600 years ago. Two evils, not one. First the fountain is forsaken — the source is left behind. Then something is built to replace it: a cistern, hand-hewn, effortful, <em>your own</em> — and cracked, so it never holds. The thirst doesn't end. You just keep going back to a tank that can't fill. Every counterfeit in this essay is a broken cistern.</p>
+          </div></div></div>
+        </div>
+        <div class="exp" data-open="true">
+          <button class="exp-head" aria-expanded="true">
+            <span class="exp-tag concrete">Make it concrete</span>
+            <span class="exp-label">The same slot, the real thing vs the cheap thing</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <p class="dim" style="margin-bottom:0.8rem">Each pair fills the same slot. One nourishes all the way down; one just quiets the alarm for twenty minutes.</p>
+            <p class="swap"><b>Connection</b> — friends on a couch at 1am <span>vs</span> <em>twelve group chats you scroll but never speak in</em></p>
+            <p class="swap"><b>Rest</b> — bored long enough that your brain finally settles <span>vs</span> <em>three hours of TikTok, somehow more tired than you started</em></p>
+            <p class="swap"><b>Focus</b> — a book that pulls you under for an hour <span>vs</span> <em>73 tab switches and a day that ended before it began</em></p>
+            <p class="swap"><b>Intimacy</b> — telling one person the thing you're scared they'll judge <span>vs</span> <em>an AI companion who agrees with everything you say</em></p>
+            <p class="swap"><b>Meaning</b> — serving something bigger than you, unwatched <span>vs</span> <em>curating the identity instead of doing the work it describes</em></p>
+            <p class="swap"><b>Mastery</b> — six months on one hard skill <span>vs</span> <em>leveling up a character someone else designed</em></p>
+            <p class="swap"><b>Belonging</b> — a table that would notice if you didn't show <span>vs</span> <em>a feed that forgets you the instant you stop posting</em></p>
+            <p class="swap"><b>Touch</b> — a long hug from someone who stays <span>vs</span> <em>a heart tapped on a photo from two states away</em></p>
+            <p class="swap"><b>Comfort</b> — a friend who sits in it with you and says nothing <span>vs</span> <em>a cart full of things that ship by tomorrow</em></p>
+            <p class="swap"><b>Wonder</b> — a night sky somewhere with no signal <span>vs</span> <em>a highlight reel of other people's awe</em></p>
+            <p class="swap"><b>Guidance</b> — an older person who has walked it and tells you the truth <span>vs</span> <em>forty open tabs and an algorithm guessing what you'll click</em></p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 DEPENDENCY -->
+  <section id="dependency">
+    <div class="col">
+      <div class="eyebrow">06 · Dependency</div>
+      <h2>⛓️ The counterfeit <em>trains</em> you away from the cure.</h2>
+      <p class="lede">The substitute doesn't just fail to fill the slot. It retrains you away from whatever would. Real community starts to feel demanding. Silence becomes unbearable. The wound becomes your identity.</p>
+      <p>The trajectory is always the same: <strong>need → substitute → habit → dependency → incapacity</strong>. The slot is still open the whole time. You've just lost the capacity for the real thing — and “just delete the app” doesn't fix it, because the slot stays open and the next-cheapest filler moves in. There's no villain required. The system only needs the path of least resistance to point away from the source.</p>
+
+      <div class="expanders">
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag">Go deeper</span>
+            <span class="exp-label">Three drifts: belonging, rest, healing</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <h4>Belonging</h4>
+            <p>A person needs belonging → embodied community is slow and risky → social media offers instant visibility → real community starts to feel inefficient and emotionally demanding → now they feel lonely around real people but alive online. The substitute didn't solve loneliness. It retrained them away from the conditions that heal it.</p>
+            <h4>Rest</h4>
+            <p>A person needs rest → Sabbath requires trust, limits, stopping → entertainment offers escape without surrender → the body is distracted but not restored → silence becomes unbearable. The substitute didn't restore rest. It destroyed the capacity for rest.</p>
+            <h4>Healing</h4>
+            <p>A person needs healing → real healing asks for confession, change, and people who stay, which is costly → endless self-analysis feels safer and more controllable → they learn to narrate the pain without ever moving through it → insight piles up; nothing changes. Note the line carefully: good therapy drives <em>toward</em> change. This is its counterfeit — insight treated as a place to live instead of a door to walk through.</p>
+          </div></div></div>
+        </div>
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag concrete">Make it concrete</span>
+            <span class="exp-label">The same loop, across a whole life</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <div class="timeline">
+              <div class="tl-row"><div class="tl-age">14—18</div><p>TikTok fills the <b>connection</b> slot while real friendships starve. Energy drinks fill the <b>rest</b> slot while sleep collapses.</p></div>
+              <div class="tl-row"><div class="tl-age">19—27</div><p>Dating apps fill the <b>intimacy</b> slot before intimacy can form. The personal brand fills the <b>meaning</b> slot before any meaningful work exists to describe.</p></div>
+              <div class="tl-row"><div class="tl-age">28—39</div><p>Cold plunges, productivity stacks, and biohacking become the substitute for needing other people. The <b>meaning</b> slot eats whatever's in front of it — usually a podcast.</p></div>
+              <div class="tl-row"><div class="tl-age">40—55</div><p>Career becomes the only resident of the <b>meaning</b> slot. When the career shifts, the slot opens wider than ever and nothing's been built to fill it.</p></div>
+              <div class="tl-row"><div class="tl-age">60+</div><p>Cable news fills the <b>belonging</b> slot. Photos of grandkids fill the <b>touch</b> slot from two states away. The slots don't retire when you do.</p></div>
+            </div>
+          </div></div></div>
+        </div>
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag">Go deeper</span>
+            <span class="exp-label">The structure underneath — the Subscription Model</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <p>All of it rests on one quiet lie: <em>“Your needs are independent problems. You are the manager of them. Curate enough parts, and you'll become whole.”</em> The self becomes a project manager over its own fragmentation — body managed with fitness, loneliness with apps, emotions with therapy language, image with branding, spirituality with content. Mapped through the Subscription Model:</p>
+            <div class="sub-model">
+              <div class="sm-row"><div class="sm-key">Wound</div><div class="sm-val">The structural loneliness of being unbundled — a self that doesn't belong to anything sufficient to hold it.</div></div>
+              <div class="sm-row"><div class="sm-key">Offer</div><div class="sm-val">“The needs are independent and additive. You are the right unit to manage them.”</div></div>
+              <div class="sm-row"><div class="sm-key">Idol</div><div class="sm-val">Self-actualization — the autonomous, self-curating individual, the actual deity of the culture.</div></div>
+              <div class="sm-row"><div class="sm-key">Altar</div><div class="sm-val">The rituals of self-curation: morning routine, therapy hour, gym, journaling, skincare, career pivots, subscriptions.</div></div>
+              <div class="sm-row"><div class="sm-key">Structure</div><div class="sm-val">“I am the project of my life. If I am unwell, I haven't optimized enough. The solution is always more self-work.”</div></div>
+            </div>
+            <p style="margin-top:1.2rem">It can't be falsified from inside its own frame — every failure is absorbed as evidence you need more of the frame. The only way out is to step outside and say: maybe the self was never the right unit. Maybe the lie wasn't “you can't integrate alone,” but the older one beneath it — <em>you shouldn't be dependent at all.</em></p>
+          </div></div></div>
+        </div>
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag scripture">In Scripture</span>
+            <span class="exp-label">Martha's motion · the figuring-out trap</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <div class="verse"><p>“Martha, Martha, you are anxious and troubled about many things, but one thing is necessary. Mary has chosen the good portion, which will not be taken away from her.”</p><cite>Luke 10:41–42</cite></div>
+            <p>Martha isn't wrong that things need doing. She's wrong about what the doing is <em>for</em>. She's confused motion with presence. A full calendar feels like a full life — but busyness is grief in disguise, papering over an integration we sense should be there and isn't.</p>
+            <div class="verse"><p>“Trust in the Lord with all your heart, and do not lean on your own understanding.”</p><cite>Proverbs 3:5–6</cite></div>
+            <p>The verse doesn't say <em>understand more</em>. It says don't lean on your understanding. You can't figure your way out of figuring everything out — the impulse to analyze is the same impulse that broke everything into parts in the first place.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 THE WAY BACK -->
+  <section id="wayback">
+    <div class="col">
+      <div class="eyebrow">07 · The way back</div>
+      <h2>🧭 Not more optimization. <em>Re-sourcing.</em></h2>
+      <p class="lede">The way out is not a better self-management system — that just becomes another layer of the same counterfeit. You can't analyze your way into communion, optimize your way into rest, or schedule transcendence onto the calendar between meetings. Some things can only be <strong>received</strong>.</p>
+      <p>So the move is re-aggregation: choose the activities that fill many slots at once. Cooking dinner with people you love fills six slots in one act, and is harder to schedule than DoorDash, which fills one. Worship in a real body of people fills meaning, connection, transcendence, narrative, and rhythm at once. Making something with your hands and giving it away fills competence, contribution, beauty, and connection. The pattern is consistent: the activities that fill many slots at once are slower, more embodied, more local, more relational, and more inconvenient — which is exactly what the attention economy is engineered against. Integrated activities don't need its products.</p>
+
+      <div class="starter">
+        <h4>Start here this week</h4>
+        <ul>
+          <li>Put the guitar on a stand in the living room. Charge the phone in the kitchen.</li>
+          <li>Eat one meal a week with people — slow, no screens.</li>
+          <li>Find one form of worship that requires your body to be in a room with other bodies.</li>
+          <li>Make one thing with your hands this month and give it away.</li>
+          <li>Take a Sabbath — a real one, not an Instagram one.</li>
+          <li>Sit somewhere quiet long enough that the noise of your own apparatus dies down, and you can hear what was always underneath it.</li>
+        </ul>
+      </div>
+
+      <div class="expanders">
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag">Go deeper</span>
+            <span class="exp-label">Nine re-integration moves you can run inside modernity</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <div class="practices">
+              <div class="prac"><div><h4>The family table</h4><p>A shared meal at home with the same people most nights fills body, connection, belonging, meaning, and rest in one practice. The highest-leverage move most people have — and it's free.</p></div></div>
+              <div class="prac"><div><h4>Sabbath</h4><p>One day where work stops, family gathers, worship happens, bodies rest, meals slow. Not a productivity hack — a practice with three and a half millennia of backing.</p></div></div>
+              <div class="prac"><div><h4>Walk when you can</h4><p>Movement, attention, neighborhood, the chance to be seen by someone who recognizes you. The car erases all of those. Walking restores them.</p></div></div>
+              <div class="prac"><div><h4>Stay in your place</h4><p>Belonging is built by time-in-place. Be the family at the same church for fifteen years. Be known at the diner. Modernity says move for the career; re-integration says stay.</p></div></div>
+              <div class="prac"><div><h4>Multi-generational proximity</h4><p>Live near family when you can. The isolated nuclear family is a seventy-year experiment that is going badly.</p></div></div>
+              <div class="prac"><div><h4>Hospitality</h4><p>Have people in your home, around your table, regularly. The unit cost of integration collapses when it happens in a kitchen instead of a venue.</p></div></div>
+              <div class="prac"><div><h4>Embedded church</h4><p>Not church-as-Sunday-module — church as people you actually do life with: eat with, suffer with, raise kids alongside, bury, marry. The body, not the brand.</p></div></div>
+              <div class="prac"><div><h4>Work with your hands</h4><p>Cook, garden, fix, build, make. Embodied competence fills slots that knowledge work alone cannot reach.</p></div></div>
+              <div class="prac"><div><h4>Sing with people</h4><p>Liturgy, hymns, jam sessions, kitchen sing-alongs. One of the most slot-dense activities still available — and most adults haven't done it in years.</p></div></div>
+            </div>
+            <p style="margin-top:1.4rem">The pattern across all of them: they require <em>constraint</em>. You have to limit your options to belong to anything. What modernity called constraint was actually scaffolding. We tore it out — and now we're trying to hold ourselves up with willpower and apps.</p>
+            <p>One caution, and it matters more than the rest: constraint heals only when it's freely chosen and life-giving. The same words — <em>stay, belong, submit, don't leave</em> — are exactly how abusive families and controlling churches keep people, too. If the place you're in is harming you, the re-integrating move is not to stay. Leaving is its own kind of re-sourcing. The goal was never bondage; it was belonging you'd choose again with your eyes open.</p>
+          </div></div></div>
+        </div>
+        <div class="exp">
+          <button class="exp-head" aria-expanded="false">
+            <span class="exp-tag scripture">In Scripture</span>
+            <span class="exp-label">The long counter-move: source restoration</span>
+            <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="exp-body"><div class="exp-inner"><div class="exp-content">
+            <p>The Bible isn't, finally, a book of moral corrections. It's the story of a God who keeps re-integrating fragmented humans — pulling each detached need back to its rightful source.</p>
+            <div class="verse"><p>“Come to me, all who labor and are heavy laden, and I will give you rest… for I am gentle and lowly in heart, and you will find rest for your souls.”</p><cite>Matthew 11:28–30</cite></div>
+            <div class="verse"><p>“Be still, and know that I am God.”</p><cite>Psalm 46:10</cite></div>
+            <div class="verse"><p>“I am the vine; you are the branches… apart from me you can do nothing.”</p><cite>John 15:5</cite></div>
+            <p>Branches don't strive. They abide. The fruit comes because they're connected to something they're not generating on their own.</p>
+            <h4>The same pattern, all through the story</h4>
+            <p><b>Sinai (Ex 19–20)</b> — the Law as an integration scaffold: Sabbath holds rest, worship, family, body, and economy together in one practice. <b>The Shema (Deut 6)</b> — heart, soul, and strength: the whole person, no slot left out. <b>Incarnation (John 1)</b> — the Word became flesh; God refuses the body-soul split. <b>The early church (Acts 2)</b> — teaching, table, prayer, property, home, meal, joy: all the needs filled by one integrated way of life. <b>The body of Christ (1 Cor 12)</b> — not a club you opt into; an organism where the eye can't say to the hand, “I don't need you.” <b>New Jerusalem (Rev 21–22)</b> — a city that is a garden that is a temple, where God dwells with people. The story ends with integration restored.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE HONEST OBJECTIONS -->
+  <section id="objections">
+    <div class="col">
+      <div class="eyebrow">Before you buy it</div>
+      <h2>🤔 The honest <em>objections.</em></h2>
+      <p class="lede">Any frame this tidy should make you suspicious. Here are the strongest arguments against everything above — and the most honest answers I can give, conceding what should be conceded.</p>
+      <div class="objections-list">
+
+        <div class="objection">
+          <p class="challenge">This explains everything, so it predicts nothing.</p>
+          <p class="reply"><span class="tag">Fair, and the sharpest one</span>It's a lens, not a lab result — and it can rationalize any outcome. Relief proves dependency; lasting relief just proves it wasn't <em>really</em> a counterfeit. So don't trust it as a theory. Test it as a practice: put the thicker thing in the slot for a season and watch honestly. Does the ache actually quiet in a way the cheap thing never managed — or not? That's a real test, and it can fail. If the integrated life leaves you just as hollow, the frame was wrong. Hold it that way: <b>falsifiable in your own life, not proven in the abstract.</b></p>
+        </div>
+
+        <div class="objection">
+          <p class="challenge">The brain-science doesn't get you to Jesus.</p>
+          <p class="reply"><span class="tag">Correct — and worth saying plainly</span>The diagnosis — slots, fragmentation, counterfeits — is available to anyone, and you can pursue integration as an atheist through community, craft, and rest. Nothing about dopamine forces the cross. That the true source is God is exactly that: <b>a claim, made in the open — not a theorem the neuroscience proves.</b> If you only want the first six stages, take them; they stand on their own. This essay thinks the seventh is where the others finally hold together. But it's asking you, not cornering you.</p>
+        </div>
+
+        <div class="objection">
+          <p class="challenge">You're romanticizing a past that was also brutal.</p>
+          <p class="reply"><span class="tag">Guilty in places</span>The old integration was often un-chosen and sometimes oppressive — short lives, no exit, and the village that knew your name also ran it. Constraint can be a cage as easily as a scaffold. So the argument is <b>not <em>go back</em></b>. It's that the unbundling cost us something real, and the pieces can be rebuilt — by choice, with the door left open. A table you can leave is not the same as a town you can't.</p>
+        </div>
+
+        <div class="objection">
+          <p class="challenge">Some people really are addicted.</p>
+          <p class="reply"><span class="tag">Yes — and this isn't a substitute for help</span>If your use has crossed the line where you can't stop and it's wrecking your life, this frame is a <b>complement to real help, not a replacement for it.</b> Get the help. The integration work is what you build alongside and after — not instead of. "You're starved, not addicted" is a reframe to free most people from shame; it is not a diagnosis, and it should never talk anyone out of treatment they need.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RECAP -->
+  <section id="frame">
+    <div class="col">
+      <div class="eyebrow">The mechanism</div>
+      <h2>⚙️ The engine <em>underneath</em> all seven.</h2>
+      <p class="dim" style="margin-bottom:0.6rem">The seven stages above are the story. This is the machine driving it — one turn of the loop, named step by step. It runs the same whether you're fourteen or sixty.</p>
+      <div class="loop-frame">
+        <div class="lf"><span class="lf-dot solid"></span><div><b>Original need</b><span>Real, given, human. Built into the design.</span></div></div>
+        <div class="lf"><span class="lf-dot"></span><div><b>Source rupture</b><span>The need gets detached from its rightful source — by the Fall, then by modernity's industrial unbundling.</span></div></div>
+        <div class="lf"><span class="lf-dot"></span><div><b>Market discovery</b><span>The unmet ache becomes visible and profitable.</span></div></div>
+        <div class="lf"><span class="lf-dot"></span><div><b>Counterfeit offer</b><span>Fast relief without restoration. Close enough to feel helpful; weak enough to keep the hunger returning.</span></div></div>
+        <div class="lf"><span class="lf-dot"></span><div><b>Habit formation</b><span>The substitute becomes the default pathway. Easier, faster, more controllable.</span></div></div>
+        <div class="lf"><span class="lf-dot"></span><div><b>Dependency</b><span>The person loses capacity for the original source. Real community feels demanding. Silence feels unbearable.</span></div></div>
+        <div class="lf"><span class="lf-dot solid"></span><div><b>No resolve</b><span>The ache remains. The cycle repeats. The system profits.</span></div></div>
+      </div>
+      <p style="margin-top:2rem" class="dim">The tragedy isn't that people are needy. The tragedy is that their needs are being discipled by systems that profit from keeping them unresolved. The biblical answer isn't to become less dependent. It's to become <strong>rightly dependent</strong> again.</p>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="close" id="close">
+    <div class="col">
+      <p class="close-line">You can't go empty.<br>You only choose <em>what fills you.</em></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>The Counterfeit Loop · Need → Substitute → Dependency · read slowly</footer>
+
+</div>
+
+<script>
+(function () {
+  /* ---------- expanders ---------- */
+  function setExp(exp, open) {
+    exp.dataset.open = open ? "true" : "false";
+    var head = exp.querySelector(".exp-head");
+    if (head) head.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  function syncReadLabel() {
+    var all = document.querySelectorAll(".exp");
+    var open = document.querySelectorAll('.exp[data-open="true"]').length;
+    allOpen = open === all.length;
+    readLabel.textContent = allOpen ? "Collapse all" : "Open all";
+    readBtn.setAttribute("aria-pressed", allOpen ? "true" : "false");
+  }
+  document.querySelectorAll(".exp-head").forEach(function (head) {
+    head.addEventListener("click", function () {
+      var exp = head.closest(".exp");
+      setExp(exp, exp.dataset.open !== "true");
+      syncReadLabel();
+    });
+  });
+
+  /* ---------- slots ---------- */
+  document.querySelectorAll(".slot").forEach(function (slot) {
+    function toggle() {
+      var open = slot.dataset.open !== "true";
+      // close siblings for a clean single-open feel
+      slot.parentElement.querySelectorAll(".slot").forEach(function (s) {
+        s.dataset.open = "false"; s.setAttribute("aria-expanded", "false");
+      });
+      slot.dataset.open = open ? "true" : "false";
+      slot.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    slot.addEventListener("click", toggle);
+    slot.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* ---------- open-all / collapse-all ---------- */
+  var readBtn = document.getElementById("readmode");
+  var readLabel = document.getElementById("readmode-label");
+  var allOpen = false;
+  readBtn.addEventListener("click", function () {
+    allOpen = !allOpen;
+    document.querySelectorAll(".exp").forEach(function (exp) { setExp(exp, allOpen); });
+    readLabel.textContent = allOpen ? "Collapse all" : "Open all";
+    readBtn.setAttribute("aria-pressed", allOpen ? "true" : "false");
+  });
+
+  /* ---------- theme toggle ---------- */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById("theme");
+  var icon = document.getElementById("theme-icon");
+  var sun = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/>';
+  var moon = '<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>';
+  themeBtn.addEventListener("click", function () {
+    var light = root.getAttribute("data-theme") === "light";
+    root.setAttribute("data-theme", light ? "dark" : "light");
+    icon.innerHTML = light ? moon : sun;
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var revealEls = document.querySelectorAll("section > .col, .slots-grid");
+  revealEls.forEach(function (el) { el.classList.add("reveal"); });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: "0px 0px -8% 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---------- stepper active state ---------- */
+  var stepIds = ["design","slots","split","market","counterfeit","dependency","wayback","objections"];
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".step"));
+  var sections = stepIds.map(function (id) { return document.getElementById(id); });
+  function activate(id) {
+    steps.forEach(function (s) {
+      s.classList.toggle("active", s.getAttribute("href") === "#" + id);
+    });
+  }
+  if ("IntersectionObserver" in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) activate(e.target.id); });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    sections.forEach(function (s) { if (s) spy.observe(s); });
+  }
+  // keep active step scrolled into view in the horizontal nav
+  var stepper = document.getElementById("stepper");
+  steps.forEach(function (s) {
+    s.addEventListener("click", function () {
+      setTimeout(function () { s.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); }, 50);
+    });
+  });
+})();
+</script>
+</body>
+</html>
