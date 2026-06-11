@@ -601,7 +601,13 @@ html[data-theme="light"] .exp-tag.scripture {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.7rem;
   margin-top: 2rem;
-  align-items: start;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .slots-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .slot {
@@ -613,11 +619,23 @@ html[data-theme="light"] .exp-tag.scripture {
   transition: all 0.4s var(--ease);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.slot-need {
+  margin-top: 0.5rem;
+  flex-grow: 1;
 }
 
 .slot:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
+}
+
+.slot[data-open="false"] {
+  height: 180px;
 }
 
 .slot[data-open="true"] {
@@ -627,6 +645,7 @@ html[data-theme="light"] .exp-tag.scripture {
   cursor: default;
   box-shadow: var(--shadow);
   order: -1;
+  height: auto;
 }
 
 .slot-num {
@@ -936,9 +955,7 @@ html[data-theme="light"] .exp-tag.scripture {
 }
 
 .prac {
-  display: grid;
-  grid-template-columns: 2.4rem 1fr;
-  gap: 0.8rem;
+  display: block;
   padding: 1.2rem;
   border: 1px solid var(--rule-strong);
   border-radius: 12px;
@@ -951,15 +968,6 @@ html[data-theme="light"] .exp-tag.scripture {
   border-color: var(--accent);
   background: var(--card);
   box-shadow: var(--shadow);
-}
-
-.prac::before {
-  counter-increment: prac;
-  content: counter(prac, lower-roman);
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  color: var(--accent);
-  padding-top: 0.2rem;
 }
 
 .prac h4 {
@@ -1159,10 +1167,10 @@ html[data-theme="light"] .exp-tag.scripture {
 .close-line {
   font-family: var(--display);
   font-style: italic;
-  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-size: clamp(3rem, 9vw, 5.5rem);
   line-height: 1.12;
-  letter-spacing: -0.01em;
-  margin-bottom: 1.6rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.2rem;
 }
 
 .close-line em {
@@ -1271,7 +1279,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
 <main>
 
   <!-- PROLOGUE -->
-  <section class="hero" id="top" style="padding-bottom: 2rem; border-bottom: none;">
+  <section class="hero" id="top" style="padding-bottom: 10rem; border-bottom: none;">
     <div class="col">
       <div class="eyebrow">A field guide to wanting · MMXXVI</div>
       <h1 class="hero-title">📱 You are not<br>addicted to<br>your <em>phone.</em></h1>
@@ -1282,7 +1290,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
   </section>
 
   <!-- HERO -->
-  <section class="hero" style="padding-top: 2rem; padding-bottom: 4rem;">
+  <section class="hero" style="padding-top: 10rem; padding-bottom: 4rem;">
     <div class="col">
       <h1 class="hero-title">You were made<br>to be <em>full</em>.</h1>
       <p class="hero-thesis">Not by managing your needs one app at a time — but by being filled, all at once, from a source that doesn't run dry.</p>
@@ -1542,7 +1550,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       </div>
 
       <!-- SLOT 06: Mastery -->
-      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#9a7a3a; view-transition-name: slot-6;">
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#8b5cf6; view-transition-name: slot-6;">
         <div class="slot-hint">+</div>
         <div class="slot-name">Mastery</div>
         <div class="slot-need">The need to become genuinely good at something through your own hands.</div>
