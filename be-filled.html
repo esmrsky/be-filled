@@ -629,12 +629,6 @@ html[data-theme="light"] .exp-tag.scripture {
   order: -1;
 }
 
-.slots-grid:has(.slot[data-open="true"]) .slot[data-open="false"] {
-  opacity: 0.45;
-  transform: scale(0.98);
-  filter: grayscale(0.2);
-}
-
 .slot-num {
   font-family: var(--mono);
   font-size: 0.62rem;
@@ -1368,7 +1362,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
     <div class="slots-grid" id="slotsGrid">
 
       <!-- SLOT 01: Connection -->
-      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#b6862f">
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#b6862f; view-transition-name: slot-1;">
         <div class="slot-hint">+</div>
         <div class="slot-name">Connection</div>
         <div class="slot-need">The need to be known by name in a room you keep coming back to.</div>
@@ -1404,7 +1398,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       </div>
 
       <!-- SLOT 02: Rest -->
-      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#7e9b6a">
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#7e9b6a; view-transition-name: slot-2;">
         <div class="slot-hint">+</div>
         <div class="slot-name">Rest</div>
         <div class="slot-need">The need for your whole system to trust that it's safe to stop.</div>
@@ -1440,7 +1434,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       </div>
 
       <!-- SLOT 03: Focus -->
-      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#c06a3a">
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#c06a3a; view-transition-name: slot-3;">
         <div class="slot-hint">+</div>
         <div class="slot-name">Focus</div>
         <div class="slot-need">The need for one thing to mean enough that you stay with it.</div>
@@ -1476,7 +1470,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       </div>
 
       <!-- SLOT 04: Intimacy -->
-      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#a85a6b">
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#a85a6b; view-transition-name: slot-4;">
         <div class="slot-hint">+</div>
         <div class="slot-name">Intimacy</div>
         <div class="slot-need">The need to be fully seen, and not run from.</div>
@@ -1512,7 +1506,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       </div>
 
       <!-- SLOT 05: Meaning -->
-      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#5f87a0">
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#5f87a0; view-transition-name: slot-5;">
         <div class="slot-hint">+</div>
         <div class="slot-name">Meaning</div>
         <div class="slot-need">The need to pour yourself into something that would matter unwatched.</div>
@@ -1548,7 +1542,7 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       </div>
 
       <!-- SLOT 06: Mastery -->
-      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#9a7a3a">
+      <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#9a7a3a; view-transition-name: slot-6;">
         <div class="slot-hint">+</div>
         <div class="slot-name">Mastery</div>
         <div class="slot-need">The need to become genuinely good at something through your own hands.</div>
@@ -1966,9 +1960,16 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       slot.dataset.open = open ? "true" : "false";
       slot.setAttribute("aria-expanded", open ? "true" : "false");
     }
-    slot.addEventListener("click", toggle);
+    function runToggleWithTransition() {
+      if (document.startViewTransition) {
+        document.startViewTransition(toggle);
+      } else {
+        toggle();
+      }
+    }
+    slot.addEventListener("click", runToggleWithTransition);
     slot.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); runToggleWithTransition(); }
     });
   });
 
