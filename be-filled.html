@@ -610,7 +610,7 @@ html[data-theme="light"] .exp-tag.scripture {
   background: var(--card-soft);
   padding: 1.2rem 1.25rem;
   cursor: pointer;
-  transition: all 0.3s var(--ease);
+  transition: all 0.4s var(--ease);
   position: relative;
   overflow: hidden;
 }
@@ -626,6 +626,13 @@ html[data-theme="light"] .exp-tag.scripture {
   grid-column: 1 / -1;
   cursor: default;
   box-shadow: var(--shadow);
+  order: -1;
+}
+
+.slots-grid:has(.slot[data-open="true"]) .slot[data-open="false"] {
+  opacity: 0.45;
+  transform: scale(0.98);
+  filter: grayscale(0.2);
 }
 
 .slot-num {
@@ -1363,7 +1370,6 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       <!-- SLOT 01: Connection -->
       <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#b6862f">
         <div class="slot-hint">+</div>
-        <div class="slot-num">SLOT 01</div>
         <div class="slot-name">Connection</div>
         <div class="slot-need">The need to be known by name in a room you keep coming back to.</div>
         <div class="slot-detail"><div class="slot-detail-in">
@@ -1400,7 +1406,6 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       <!-- SLOT 02: Rest -->
       <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#7e9b6a">
         <div class="slot-hint">+</div>
-        <div class="slot-num">SLOT 02</div>
         <div class="slot-name">Rest</div>
         <div class="slot-need">The need for your whole system to trust that it's safe to stop.</div>
         <div class="slot-detail"><div class="slot-detail-in">
@@ -1437,7 +1442,6 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       <!-- SLOT 03: Focus -->
       <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#c06a3a">
         <div class="slot-hint">+</div>
-        <div class="slot-num">SLOT 03</div>
         <div class="slot-name">Focus</div>
         <div class="slot-need">The need for one thing to mean enough that you stay with it.</div>
         <div class="slot-detail"><div class="slot-detail-in">
@@ -1474,7 +1478,6 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       <!-- SLOT 04: Intimacy -->
       <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#a85a6b">
         <div class="slot-hint">+</div>
-        <div class="slot-num">SLOT 04</div>
         <div class="slot-name">Intimacy</div>
         <div class="slot-need">The need to be fully seen, and not run from.</div>
         <div class="slot-detail"><div class="slot-detail-in">
@@ -1511,7 +1514,6 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       <!-- SLOT 05: Meaning -->
       <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#5f87a0">
         <div class="slot-hint">+</div>
-        <div class="slot-num">SLOT 05</div>
         <div class="slot-name">Meaning</div>
         <div class="slot-need">The need to pour yourself into something that would matter unwatched.</div>
         <div class="slot-detail"><div class="slot-detail-in">
@@ -1548,7 +1550,6 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       <!-- SLOT 06: Mastery -->
       <div class="slot" data-open="false" tabindex="0" role="button" aria-expanded="false" style="--slot:#9a7a3a">
         <div class="slot-hint">+</div>
-        <div class="slot-num">SLOT 06</div>
         <div class="slot-name">Mastery</div>
         <div class="slot-need">The need to become genuinely good at something through your own hands.</div>
         <div class="slot-detail"><div class="slot-detail-in">
