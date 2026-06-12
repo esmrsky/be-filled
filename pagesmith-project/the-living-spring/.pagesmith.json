@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "projectId": "69d6de2c-dd3f-427f-8adf-18b7e3c4aa22",
+  "projectName": "The Living Spring",
+  "pulledAt": "2026-06-12T06:36:54.521Z",
+  "apiUrl": "https://pagesmith.ai/api/external",
+  "files": {
+    "src/components/Footer.astro": {
+      "sha256": "c6dd975203031066c981a4caee5ec647a40afe8eb5db490e81366161c9f66deb",
+      "size": 173
+    },
+    "src/components/Navigation.astro": {
+      "sha256": "3a59e201e9cef10ac46a2a932d30d0a0034c1c2746200cba8f2542115bf83e60",
+      "size": 1534
+    },
+    "src/components/home/Ache.astro": {
+      "sha256": "136b00c082d46a13f10fff44495b9eda0a16b3b15e1be495afe52bf2d92acf9d",
+      "size": 8328
+    },
+    "src/components/home/Feast.astro": {
+      "sha256": "326605abe8a5130f0288fbf2ea4467e089c4f5a9090ba7612154fd85b9cfd03b",
+      "size": 2916
+    },
+    "src/components/home/Fountain.astro": {
+      "sha256": "9a211b4804b273e20eaab89945ec5466ce575f78b7a614f9a8a6fbcdff14f9cc",
+      "size": 3375
+    },
+    "src/components/home/Fullness.astro": {
+      "sha256": "d48a7683084062a0d0bb588be93d7b97b41200ad568bb533b998f71b4127cfe1",
+      "size": 1985
+    },
+    "src/components/home/Heart.astro": {
+      "sha256": "f3b6dc75959c696d8576048eedc612cd4571a9ae594cfa714ff991bc86d20744",
+      "size": 4150
+    },
+    "src/components/home/Hero.astro": {
+      "sha256": "10f3b84dea662a33abefeaddbcfb4f6d71c695a3cf5bb36f297135dd3777f2ff",
+      "size": 4451
+    },
+    "src/components/home/Objections.astro": {
+      "sha256": "70686175ca8f12a972426b19320931e6b4ff92aa69396f7a3562d6e584c8c5c3",
+      "size": 4000
+    },
+    "src/components/home/QuoteBanner.astro": {
+      "sha256": "8a5b8069633f6b441262dde4931f387a6ef22c6ac9a93baf4f8d29e78badf64a",
+      "size": 265
+    },
+    "src/components/home/Riverbed.astro": {
+      "sha256": "d802831281a6fcaceaa4f49914e7a7ce5fe9c62fea8c0a15032c2fe5b9fef5f1",
+      "size": 6319
+    },
+    "src/components/home/Slots.astro": {
+      "sha256": "b4f02ac82d9bff1e73f893784aa26c4b72d5855d023e307f1e92af9bcdaf013f",
+      "size": 15850
+    },
+    "src/components/home/Tasted.astro": {
+      "sha256": "2d75379ee1535e2a7f425090883838bd6bdb499cde98b32bba90ee7ef40314cd",
+      "size": 6133
+    },
+    "src/pages/index.astro": {
+      "sha256": "dbe6c97e58753cc146a03b97b0909f703b5ee07e94d740270a9d803c54bbcf41",
+      "size": 1157
+    },
+    "src/scripts/be-filled.js": {
+      "sha256": "9cae339ff04b175df30d7c405289cef958683e6da0e3179081191fd1a8b9202e",
+      "size": 5195
+    },
+    "src/styles/be-filled.css": {
+      "sha256": "90f49bd17163470e74403406d363ccd18e109966b8c380ff55c1a3250db512ad",
+      "size": 25005
+    },
+    "package.json": {
+      "sha256": "2b6e001c0c3f9365b08d687fd4b246935e37715a5e43ecb41d8d4f2f795abf7c",
+      "size": 725
+    },
+    "DESIGN.md": {
+      "sha256": "3deb3a9ab1cc736adfd5d040b0d7b3f41a526cd6a0e5158d3697b23e59bf8c0d",
+      "size": 2149
+    },
+    "README.md": {
+      "sha256": "54a1a165864121d0f5b3f36ea0d971359984bfc2e4ec79cc654a93d3c8003bc2",
+      "size": 49
+    },
+    "astro.config.mjs": {
+      "sha256": "e1601e826e0914dc0b830a96f5066a220e7d41a2ae5ae394f97b2796d55a0db2",
+      "size": 3038
+    },
+    "data/design_guide.md": {
+      "sha256": "c3655efa33c715a1fb0bea37d86457d42da888a72c2a38157f114263f7bd12ca",
+      "size": 17298
+    },
+    "data/pages/index.computed-styles.json": {
+      "sha256": "8316d13cfd381be95f7227f45db891d3610470e0da2898302579e0fddd801230",
+      "size": 25374
+    },
+    "data/pages/index.images.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "size": 2
+    },
+    "data/pages/index.md": {
+      "sha256": "42264bacac1942d4c856bbc68c3e65d04c3bcefb8a4e5776a1d178c98318713c",
+      "size": 26677
+    },
+    "data/pages/index.styles.json": {
+      "sha256": "c6c6b15f385dba127ab6d766253937268553cc7ea7fd600b6b799878991e5404",
+      "size": 165
+    },
+    "data/scraped_site.json": {
+      "sha256": "267b84a37ff2159a0570ade238ce27bc4881bee4ea5de855e05c0c886e669378",
+      "size": 1867
+    },
+    "public/favicon.svg": {
+      "sha256": "e0d8c9edc5a33ce7c8b7efffc40367d803d16983b37e6332862d0b1a31e4d44d",
+      "size": 260
+    },
+    "src/components/Container.astro": {
+      "sha256": "c65494caced588e2eb0602108d5f26ebbafd2e71436e1f86e0935a7bd885e7e2",
+      "size": 241
+    },
+    "src/components/SEOHead.astro": {
+      "sha256": "3bf29baff139fff30e29a3ca9edeab8eb42bb337c28221b705490f723a7799bb",
+      "size": 2930
+    },
+    "src/components/TableOfContents.astro": {
+      "sha256": "78ea889579bd3b6b334d339c5f008860eb70c9e999c6fe73ae65710c896fdca1",
+      "size": 1205
+    },
+    "src/config/site.ts": {
+      "sha256": "a549c917c55a7292971c00bc709598972ec6dd65a49d585d62711eb6fe7e3a6f",
+      "size": 634
+    },
+    "src/content.config.ts": {
+      "sha256": "3370311339384f0c96200917af53c2aeba227e44468b274044f11be77a1cefa5",
+      "size": 1994
+    },
+    "src/layouts/BaseLayout.astro": {
+      "sha256": "8b75819a8c01c7d495dfbe5ecb63441af8afb74cf8f7ba669e603cc0f3f2e73d",
+      "size": 4726
+    },
+    "src/layouts/BlogLayout.astro": {
+      "sha256": "adb6cce59133577d6fed93d6751f23b89cc459e87f95a371c42ac474688f0ee4",
+      "size": 8353
+    },
+    "src/layouts/DocsLayout.astro": {
+      "sha256": "de2d5ac13059449f76c8497f2fb6d9723bdfd2cecc6028ed1698c6175b9853df",
+      "size": 3912
+    },
+    "src/middleware.ts": {
+      "sha256": "aed78b98d29d79b7ab0ae0146bdd53dbe8ae4b68b123282aa477baef1159b657",
+      "size": 139
+    },
+    "src/pages/404.astro": {
+      "sha256": "8f3e363796ae937cea11756607ae17accc0ff2f9e04b22fce4940f54b407aa5b",
+      "size": 947
+    },
+    "src/pages/llms.txt.ts": {
+      "sha256": "d62bc4b3e737d0d0a7b2a789e88e65973b102834ec2709592b0091d949661bc0",
+      "size": 334
+    },
+    "src/pages/robots.txt.ts": {
+      "sha256": "12e063e7e3b92990b27de0e9ae8a5845ddc017e2ffcdb18b1ff42f81766dd26a",
+      "size": 328
+    },
+    "src/pages/sitemap.xml.ts": {
+      "sha256": "e590db88f8afbfd8d9e1fde1fc96566e5a2ada4496d9c01a70e20d5525f3c701",
+      "size": 193
+    },
+    "src/plugins/remark-toc.mjs": {
+      "sha256": "d6f58e6da98827d2f8bbb3e7bd76b528c47592c785c477ab8249da3dab7724f5",
+      "size": 2372
+    },
+    "src/styles/fonts.css": {
+      "sha256": "1ab26044e3783705c7e42db13ddedf926aa30b9fe51e91ec81df95bb3aa1aec7",
+      "size": 1087
+    },
+    "src/styles/global.css": {
+      "sha256": "ad7aef0688fbed430033945eb1ecdf09044b1bb133260477c3477c5baba48414",
+      "size": 4082
+    },
+    "tsconfig.json": {
+      "sha256": "5ab5e88cdce59bdae1d0441058fe7158a4d5c5a40a417120361b595084535296",
+      "size": 134
+    }
+  }
+}

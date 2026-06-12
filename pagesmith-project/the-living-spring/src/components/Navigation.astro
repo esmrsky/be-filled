@@ -1,0 +1,28 @@
+---
+// Navigation.astro - Custom topbar and stepper navigation for Be Filled
+---
+<header class="topbar" data-ps="src/components/Navigation.astro:header">
+  <div class="brand">The&nbsp;Living&nbsp;<b>Spring</b></div>
+  <div class="controls">
+    <button class="btn" id="readmode" aria-pressed="false"><span id="readmode-label">Open all</span></button>
+    <button class="btn" id="theme" aria-label="Toggle theme">
+      <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<nav class="stepper" id="stepper" aria-label="Sections" data-ps="src/components/Navigation.astro:nav">
+  <div class="stepper-inner">
+    <a class="step" href="#hunt"><span>01</span> 🦌 The Hunt</a>
+    <a class="step" href="#slots"><span>02</span> 🔌 The Slots</a>
+    <a class="step" href="#split"><span>03</span> ✂️ The Split</a>
+    <a class="step" href="#loop"><span>04</span> ⛓️ The Loop</a>
+    <a class="step" href="#fountain"><span>05</span> ⛲ The Fountain</a>
+    <a class="step" href="#turn"><span>06</span> 🔥 The Turn</a>
+    <a class="step" href="#riverbed"><span>07</span> 🏞️ The Riverbed</a>
+    <a class="step" href="#feast"><span>08</span> 🍞 The Feast</a>
+    <a class="step" href="#objections"><span>09</span> 🤔 Objections</a>
+  </div>
+</nav>

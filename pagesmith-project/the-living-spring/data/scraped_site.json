@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "url": "https://elegant-sunburst-33a404.netlify.app/",
+  "structured": {
+    "title": "The Living Spring -- A Field Guide to Fullness",
+    "description": "You were made to be full. Trace any real delight far enough upstream and you reach the same source. Read the short version, or open it all the way down.",
+    "url": "https://elegant-sunburst-33a404.netlify.app/",
+    "imageCount": 2,
+    "branding": {
+      "colors": {
+        "primary": "#5B4D40",
+        "accent": "#F0E7D6",
+        "background": "#F4EDE0",
+        "textPrimary": "#211913",
+        "link": "#F0E7D6"
+      },
+      "typography": {
+        "fontFamilies": {
+          "primary": "EB Garamond",
+          "heading": "Fraunces"
+        },
+        "fontStacks": {
+          "heading": [
+            "Fraunces",
+            "EB Garamond",
+            "Georgia",
+            "serif"
+          ],
+          "body": [
+            "Fraunces",
+            "EB Garamond",
+            "Georgia",
+            "serif"
+          ],
+          "paragraph": [
+            "Fraunces",
+            "EB Garamond",
+            "Georgia",
+            "serif"
+          ]
+        },
+        "fontSizes": {
+          "h1": "128px",
+          "h2": "48px",
+          "body": "27.2px"
+        }
+      },
+      "spacing": {
+        "baseUnit": 4,
+        "borderRadius": "0px"
+      },
+      "logo": null,
+      "favicon": null
+    },
+    "pages": [
+      {
+        "slug": "index",
+        "path": "/",
+        "title": "The Living Spring -- A Field Guide to Fullness",
+        "file": "data/pages/index.md"
+      }
+    ],
+    "availablePages": []
+  },
+  "metadata": {
+    "scraper": "firecrawl-crawl-endpoint",
+    "timestamp": "2026-06-08T19:08:28.173Z",
+    "homepageContentLength": 26304,
+    "imageCount": 2,
+    "hasBranding": true,
+    "pagesDiscovered": 0,
+    "pagesScraped": 1
+  }
+}

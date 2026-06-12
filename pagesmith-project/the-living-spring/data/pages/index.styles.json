@@ -1,0 +1,9 @@
+{
+  "summary": {
+    "dominantFontStyle": "mono",
+    "spacingDensity": "tight",
+    "cornerStyle": "pill",
+    "shadowStyle": "subtle",
+    "hasBorders": true
+  }
+}

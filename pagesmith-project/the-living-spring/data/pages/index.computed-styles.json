@@ -1,0 +1,668 @@
+{
+  "viewportWidth": 1920,
+  "pageBackground": {
+    "type": "color",
+    "value": "rgb(244, 237, 224)"
+  },
+  "sectionThemes": [
+    {
+      "background": "rgb(244, 237, 224)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h1",
+          "fontSize": "128px",
+          "fontWeight": "340",
+          "color": "rgb(33, 25, 19)",
+          "text": "You were madeto be full."
+        },
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🌱 Honestly? It's good news, and it's simple."
+        },
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🌾 You have tasted this. That's the whole argument."
+        },
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "⛲ Every good thing is a stream. He is the source."
+        },
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🍷 Inside you there are slots. They were the point."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "27.2px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "39.44px"
+      },
+      "buttons": [
+        {
+          "color": "rgb(91, 77, 64)",
+          "borderRadius": "999px",
+          "border": "1px solid rgba(33, 25, 19, 0.22)",
+          "padding": "6.72px 14.4px 6.72px 14.4px",
+          "fontSize": "11.52px",
+          "fontWeight": "400",
+          "text": "Open all"
+        },
+        {
+          "color": "rgb(33, 25, 19)",
+          "padding": "15.2px 17.6px 15.2px 17.6px",
+          "fontSize": "13.3333px",
+          "fontWeight": "400",
+          "text": "Go deeperWhy the source can give without",
+          "hoverTextColor": "rgb(33, 25, 19)"
+        }
+      ],
+      "layout": {
+        "containerMaxWidth": "1100px"
+      },
+      "interactionType": "accordion",
+      "accordionItems": [
+        {
+          "question": "If you want the arcIt begins full, and it ends fuller",
+          "answer": "It began whole. One garden where work and worship and body and people and meaning were a single life — every need met by its proper source, all at once.\n            It fractured — first in Eden, then again when modernity pulled every need apart and handed each one to a separate vendor. That's the ac"
+        },
+        {
+          "question": "Go deeperThe nervous system already knows the difference",
+          "answer": "The good version leaves a physiological signature. A face that's genuinely glad to see you settles your whole system — the body co-regulates against another safe body in a way no screen can fake. Awe — a night sky, a cathedral, a piece of music that opens the floor under you — quiets the chattering "
+        },
+        {
+          "question": "In ScripturePlaced in a garden, given everything at once",
+          "answer": "Scripture never treats human need as embarrassing. The first humans are given — a garden, food, work, marriage, place, rhythm, speech, blessing, presence — all in one frame. No separate gym, no separate temple, no separate marketplace.\n            “The Lord God planted a garden in Eden… and out of t"
+        },
+        {
+          "question": "In ScriptureThe fountain, the bread, the vine, the light",
+          "answer": "“If anyone thirsts, let him come to me and drink. Whoever believes in me… out of his heart will flow rivers of living water.”John 7:37–38\n            “I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit.”John 15:5\n            Notice what a branch do"
+        },
+        {
+          "question": "Go deeperWhy the source can give without emptying",
+          "answer": "Everything in the attention economy runs on scarcity — your time, your money, your finite attention, divided and sold. A spring runs the other way. It gives because it is full, not to get something back, and it isn't depleted by being drunk from. That's the structural difference between a source and"
+        },
+        {
+          "question": "+\n        SLOT 01\n        Connection\n        The need to be known by name in a room you keep coming ",
+          "answer": "+\n        SLOT 02\n        Rest\n        The need for your whole system to trust that it's safe to stop.\n        \n          \n            The real thingLying in the grass with nothing in your hand and nowhere to be. A walk where you never once look down. Being bored long enough that the noise settles a"
+        },
+        {
+          "question": "+\n        SLOT 02\n        Rest\n        The need for your whole system to trust that it's safe to sto",
+          "answer": "+\n        SLOT 03\n        Focus\n        The need for one thing to mean enough that you stay with it.\n        \n          \n            The real thingAn hour on something genuinely hard, and the strange joy on the other side of it. A book that pulls you under so far you forget the room. A song heard al"
+        },
+        {
+          "question": "+\n        SLOT 03\n        Focus\n        The need for one thing to mean enough that you stay with it.",
+          "answer": "+\n        SLOT 04\n        Intimacy\n        The need to be fully seen, and not have them leave.\n        \n          \n            The real thingTelling one person the thing you were sure they'd judge — and finding out they didn't, and they stayed. Being known across years, through the parts you're not "
+        },
+        {
+          "question": "+\n        SLOT 04\n        Intimacy\n        The need to be fully seen, and not have them leave.\n     ",
+          "answer": "+\n        SLOT 05\n        Meaning\n        The need to pour yourself into something that would matter unwatched.\n        \n          \n            The real thingBuilding something real and leaving it better than you found it. Raising a person. Serving something so much bigger than you that your name wi"
+        },
+        {
+          "question": "+\n        SLOT 05\n        Meaning\n        The need to pour yourself into something that would matter",
+          "answer": "+\n        SLOT 06\n        Mastery\n        The need to become genuinely good at something through your own hands.\n        \n          \n            The real thingSix months on the same hard skill, and the day your hands finally know it without being told. A craft that is actually yours. Calluses, repet"
+        },
+        {
+          "question": "+\n        SLOT 06\n        Mastery\n        The need to become genuinely good at something through you",
+          "answer": ""
+        },
+        {
+          "question": "In ScriptureThe first picture of the break is hiding",
+          "answer": "“And they heard the sound of the Lord God walking in the garden in the cool of the day, and the man and his wife hid themselves.”Genesis 3:8\n            The first disintegration in the Bible isn't a violent act. It's hiding — withdrawal from the presence that filled everything. Four communions — wit"
+        },
+        {
+          "question": "If you want the anatomyHow a thin thing keeps you coming back",
+          "answer": "The mechanism is simple and worth seeing once, so you can stop blaming your willpower for it. A real need gets cut off from its source and becomes a market. The thin substitute is built to be close enough to feel helpful, weak enough that the hunger returns — because in an attention economy, a satis"
+        },
+        {
+          "question": "Go deeperWhat the brain says about changing desire",
+          "answer": "What's solid: habits live in the basal ganglia as cue–routine–reward loops, and repetition genuinely builds them. That's the real substrate under every protocol. But that machinery governs behavior, not wanting — which is why willpower alone is fragile and prone to relapse: the brain's underlying va"
+        },
+        {
+          "question": "In ScriptureTransformation by beholding, not by striving",
+          "answer": "“Beholding the glory of the Lord, [we] are being transformed into the same image from one degree of glory to another.”2 Corinthians 3:18\n            “I will give you a new heart… I will put my Spirit within you, and cause you to walk in my statutes.”Ezekiel 36:26–27\n            Notice the order in t"
+        },
+        {
+          "question": "Go deeperNine re-integration moves you can run inside modernity",
+          "answer": "The family tableA shared meal at home with the same people most nights fills body, connection, belonging, meaning, and rest in one practice. The highest-leverage move most people have — and it's free.\n            SabbathOne day where work stops, family gathers, worship happens, bodies rest, meals sl"
+        },
+        {
+          "question": "The necessary warningEncounter without root withers — the sower",
+          "answer": "“Other seeds fell on rocky ground… and immediately they sprang up… but when the sun rose they were scorched, and since they had no root, they withered away.”Matthew 13:5–6\n            This is the corrective to romanticizing the encounter. The seed that springs up fastest and dies is the one with no "
+        },
+        {
+          "question": "In ScriptureCome, all who thirst — and the river in the city",
+          "answer": "“Come, everyone who thirsts, come to the waters; and he who has no money, come, buy and eat!”Isaiah 55:1\n            “Then the angel showed me the river of the water of life, bright as crystal, flowing from the throne… the leaves of the tree were for the healing of the nations.”Revelation 22:1–2\n   "
+        }
+      ]
+    },
+    {
+      "background": "color(srgb 0.956863 0.929412 0.878431 / 0.78)",
+      "textColor": null,
+      "headings": [],
+      "bodyStyle": null,
+      "buttons": [
+        {
+          "color": "rgb(91, 77, 64)",
+          "borderRadius": "999px",
+          "border": "1px solid rgba(33, 25, 19, 0.22)",
+          "padding": "6.72px 14.4px 6.72px 14.4px",
+          "fontSize": "11.52px",
+          "fontWeight": "400",
+          "text": "Open all"
+        }
+      ],
+      "layout": {
+        "paddingBlock": "13.6px 13.6px",
+        "display": "flex",
+        "flexDirection": "row",
+        "alignItems": "center",
+        "gap": "8px",
+        "childCount": 2
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h1",
+          "fontSize": "128px",
+          "fontWeight": "340",
+          "color": "rgb(33, 25, 19)",
+          "text": "You were madeto be full."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "27.2px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "39.44px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "736px",
+        "paddingBlock": "144px 96px",
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "gap": "11.2px 22.4px",
+        "childCount": 3
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [],
+      "bodyStyle": {
+        "fontSize": "30.4px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "41.952px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "672px",
+        "paddingBlock": "60.8px 60.8px"
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "gradient": "linear-gradient(color(srgb 0.772549 0.282353 0.101961 / 0.0611765), rgba(0, 0, 0, 0) 70%)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🌱 Honestly? It's good news, and it's simple."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "21.12px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "33.792px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "640px",
+        "paddingBlock": "112px 112px"
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🌾 You have tasted this. That's the whole argument."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "18.88px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "32.4736px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "544px",
+        "paddingBlock": "112px 112px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "9.6px",
+        "childCount": 2
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "⛲ Every good thing is a stream. He is the source."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "18.88px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "32.4736px"
+      },
+      "buttons": [
+        {
+          "color": "rgb(33, 25, 19)",
+          "padding": "15.2px 17.6px 15.2px 17.6px",
+          "fontSize": "13.3333px",
+          "fontWeight": "400",
+          "text": "Go deeperWhy the source can give without",
+          "hoverTextColor": "rgb(33, 25, 19)"
+        }
+      ],
+      "layout": {
+        "containerMaxWidth": "544px",
+        "paddingBlock": "112px 112px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "9.6px",
+        "childCount": 2
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🍷 Inside you there are slots. They were the point."
+        },
+        {
+          "tag": "h5",
+          "fontSize": "10.24px",
+          "fontWeight": "700",
+          "color": "rgb(154, 58, 24)",
+          "text": "The real thing"
+        },
+        {
+          "tag": "h5",
+          "fontSize": "10.24px",
+          "fontWeight": "700",
+          "color": "rgb(154, 138, 115)",
+          "text": "The thin echo"
+        },
+        {
+          "tag": "h5",
+          "fontSize": "9.92px",
+          "fontWeight": "700",
+          "color": "rgb(182, 134, 47)",
+          "text": "Where it's actually found"
+        },
+        {
+          "tag": "h5",
+          "fontSize": "10.24px",
+          "fontWeight": "700",
+          "color": "rgb(154, 58, 24)",
+          "text": "The real thing"
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "18.88px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "32.4736px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "544px",
+        "paddingBlock": "112px 112px"
+      },
+      "interactionType": "accordion",
+      "accordionItems": [
+        {
+          "question": "+\n        SLOT 01\n        Connection\n        The need to be known by name in a room you keep coming ",
+          "answer": "+\n        SLOT 02\n        Rest\n        The need for your whole system to trust that it's safe to stop.\n        \n          \n            The real thingLying in the grass with nothing in your hand and nowhere to be. A walk where you never once look down. Being bored long enough that the noise settles a"
+        },
+        {
+          "question": "+\n        SLOT 02\n        Rest\n        The need for your whole system to trust that it's safe to sto",
+          "answer": "+\n        SLOT 03\n        Focus\n        The need for one thing to mean enough that you stay with it.\n        \n          \n            The real thingAn hour on something genuinely hard, and the strange joy on the other side of it. A book that pulls you under so far you forget the room. A song heard al"
+        },
+        {
+          "question": "+\n        SLOT 03\n        Focus\n        The need for one thing to mean enough that you stay with it.",
+          "answer": "+\n        SLOT 04\n        Intimacy\n        The need to be fully seen, and not have them leave.\n        \n          \n            The real thingTelling one person the thing you were sure they'd judge — and finding out they didn't, and they stayed. Being known across years, through the parts you're not "
+        },
+        {
+          "question": "+\n        SLOT 04\n        Intimacy\n        The need to be fully seen, and not have them leave.\n     ",
+          "answer": "+\n        SLOT 05\n        Meaning\n        The need to pour yourself into something that would matter unwatched.\n        \n          \n            The real thingBuilding something real and leaving it better than you found it. Raising a person. Serving something so much bigger than you that your name wi"
+        },
+        {
+          "question": "+\n        SLOT 05\n        Meaning\n        The need to pour yourself into something that would matter",
+          "answer": "+\n        SLOT 06\n        Mastery\n        The need to become genuinely good at something through your own hands.\n        \n          \n            The real thingSix months on the same hard skill, and the day your hands finally know it without being told. A craft that is actually yours. Calluses, repet"
+        },
+        {
+          "question": "+\n        SLOT 06\n        Mastery\n        The need to become genuinely good at something through you",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🥀 The longing is real. So is the thing that broke."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "18.88px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "32.4736px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "544px",
+        "paddingBlock": "112px 112px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "9.6px",
+        "childCount": 2
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🔥 You don't fight the old love. A greater one displaces it."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "18.88px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "32.4736px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "544px",
+        "paddingBlock": "112px 112px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "9.6px",
+        "childCount": 2
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🏞️ Affection is the engine. Practice is the riverbed."
+        },
+        {
+          "tag": "h4",
+          "fontSize": "11.52px",
+          "fontWeight": "700",
+          "color": "rgb(197, 72, 26)",
+          "text": "Start here this week"
+        },
+        {
+          "tag": "h4",
+          "fontSize": "13.12px",
+          "fontWeight": "700",
+          "color": "rgb(197, 72, 26)",
+          "text": "The family table"
+        },
+        {
+          "tag": "h4",
+          "fontSize": "13.12px",
+          "fontWeight": "700",
+          "color": "rgb(197, 72, 26)",
+          "text": "Sabbath"
+        },
+        {
+          "tag": "h4",
+          "fontSize": "13.12px",
+          "fontWeight": "700",
+          "color": "rgb(197, 72, 26)",
+          "text": "Walk when you can"
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "18.88px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "32.4736px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "544px",
+        "paddingBlock": "112px 112px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "8.8px",
+        "childCount": 6
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🍞 The story doesn't end at recovery. It ends at a feast."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "18.88px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "32.4736px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "544px",
+        "paddingBlock": "112px 112px",
+        "display": "grid",
+        "gridTemplateColumns": "544px",
+        "childCount": 5
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(33, 25, 19)",
+      "headings": [
+        {
+          "tag": "h2",
+          "fontSize": "48px",
+          "fontWeight": "380",
+          "color": "rgb(33, 25, 19)",
+          "text": "🤔 The honest objections."
+        }
+      ],
+      "bodyStyle": {
+        "fontSize": "18.88px",
+        "color": "rgb(33, 25, 19)",
+        "lineHeight": "32.4736px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "544px",
+        "paddingBlock": "112px 112px",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "16px",
+        "childCount": 4
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "textColor": "rgb(91, 77, 64)",
+      "headings": [],
+      "bodyStyle": {
+        "fontSize": "16px",
+        "color": "rgb(91, 77, 64)",
+        "lineHeight": "17.92px"
+      },
+      "buttons": [],
+      "layout": {
+        "containerMaxWidth": "640px",
+        "paddingBlock": "128px 128px"
+      }
+    }
+  ],
+  "globalTypography": {
+    "headingFont": "Fraunces",
+    "bodyFont": "Fraunces",
+    "scale": {
+      "h1": {
+        "fontSize": "128px",
+        "fontWeight": "340",
+        "lineHeight": "117.76px"
+      },
+      "h2": {
+        "fontSize": "48px",
+        "fontWeight": "380",
+        "lineHeight": "50.88px"
+      },
+      "h5": {
+        "fontSize": "10.24px",
+        "fontWeight": "700",
+        "lineHeight": "17.6128px"
+      },
+      "h4": {
+        "fontSize": "13.12px",
+        "fontWeight": "700",
+        "lineHeight": "22.0416px"
+      },
+      "body": {
+        "fontSize": "18.88px",
+        "fontWeight": "400",
+        "lineHeight": "32.4736px"
+      }
+    }
+  },
+  "navigation": {
+    "isFullWidth": true,
+    "width": "1920px",
+    "backgroundColor": "color(srgb 0.956863 0.929412 0.878431 / 0.78)",
+    "position": "sticky",
+    "padding": "13.6px 48px 13.6px 48px",
+    "logo": {
+      "width": "14px",
+      "height": "14px",
+      "position": "inside-nav",
+      "hasBadge": false
+    },
+    "links": [
+      {
+        "text": "Open all",
+        "fontSize": "11.52px",
+        "fontFamily": "Instrument Sans",
+        "fontWeight": "400",
+        "letterSpacing": "0.9216px",
+        "color": "rgb(91, 77, 64)",
+        "hasDropdown": true,
+        "isButton": true,
+        "buttonStyle": {
+          "borderRadius": "999px",
+          "border": "1px solid rgba(33, 25, 19, 0.22)"
+        }
+      }
+    ]
+  },
+  "sliders": [],
+  "buttons": [
+    {
+      "color": "rgb(91, 77, 64)",
+      "borderRadius": "999px",
+      "border": "1px solid rgba(33, 25, 19, 0.22)",
+      "padding": "6.72px 14.4px 6.72px 14.4px",
+      "fontSize": "11.52px",
+      "fontWeight": "400",
+      "text": "Open all"
+    },
+    {
+      "color": "rgb(33, 25, 19)",
+      "padding": "15.2px 17.6px 15.2px 17.6px",
+      "fontSize": "13.3333px",
+      "fontWeight": "400",
+      "text": "Go deeperWhy the source can give without",
+      "hoverTextColor": "rgb(33, 25, 19)"
+    }
+  ],
+  "videos": [],
+  "footer": {
+    "background": "rgba(0, 0, 0, 0)",
+    "textColor": "rgb(154, 138, 115)",
+    "columns": 1
+  },
+  "socialLinks": null,
+  "hoverStyles": {
+    ".btn": {
+      "color": "var(--ink)",
+      "borderColor": "var(--accent)"
+    },
+    ".step": {
+      "color": "var(--ink-dim)"
+    },
+    ".slot": {
+      "transform": "translateY(-2px)",
+      "borderColor": "var(--accent)"
+    }
+  },
+  "cssVariables": {},
+  "externalFonts": [
+    "https://fonts.googleapis.com/",
+    "https://fonts.gstatic.com/",
+    "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+  ]
+}

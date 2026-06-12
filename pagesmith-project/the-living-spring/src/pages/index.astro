@@ -1,0 +1,37 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Fullness from '@/components/home/Fullness.astro';
+import Slots from '@/components/home/Slots.astro';
+import Tasted from '@/components/home/Tasted.astro';
+import Ache from '@/components/home/Ache.astro';
+import Fountain from '@/components/home/Fountain.astro';
+import Heart from '@/components/home/Heart.astro';
+import Riverbed from '@/components/home/Riverbed.astro';
+import Feast from '@/components/home/Feast.astro';
+import Objections from '@/components/home/Objections.astro';
+import QuoteBanner from '@/components/home/QuoteBanner.astro';
+
+import '@/styles/be-filled.css';
+---
+
+<BaseLayout
+  title="The Living Spring — A Field Guide to Fullness"
+  description="You were made to be full. Trace any real delight far enough upstream and you reach the same source. Read the short version, or open it all the way down."
+>
+  <Hero />
+  <Fullness />
+  <Slots />
+  <Tasted />
+  <Ache />
+  <Fountain />
+  <Heart />
+  <Riverbed />
+  <Feast />
+  <Objections />
+  <QuoteBanner />
+</BaseLayout>
+
+<script>
+  import '../scripts/be-filled.js';
+</script>

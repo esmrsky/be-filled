@@ -1,0 +1,146 @@
+@import 'tailwindcss';
+@import './fonts.css';
+@plugin "@tailwindcss/typography";
+
+:root {
+  --nav-height: 100px;
+
+  --color-background: hsl(39, 41%, 92%);
+  --color-foreground: hsl(26, 27%, 10%);
+  --color-muted-foreground: hsl(29, 17%, 30%);
+  --color-border: hsla(26, 27%, 10%, 0.15);
+  --color-surface: hsl(39, 41%, 92%);
+  --color-primary: hsl(29, 17%, 30%);
+  --color-primary-foreground: hsl(39, 41%, 92%);
+  --color-primary-hover: hsl(29, 17%, 20%);
+  --color-secondary: hsl(39, 59%, 45%);
+  --color-secondary-foreground: hsl(26, 27%, 10%);
+  --color-secondary-hover: hsl(39, 59%, 35%);
+  --color-accent: hsl(16, 77%, 44%);
+  --color-accent-dark: hsl(16, 73%, 35%);
+  --color-dark: hsl(26, 27%, 10%);
+  --color-dark-foreground: hsl(39, 41%, 92%);
+  --color-dark-muted: hsl(35, 17%, 53%);
+  --color-dark-border: hsla(39, 41%, 92%, 0.2);
+
+  --font-sans: "Fraunces", "EB Garamond", Georgia, serif;
+  --font-heading: "Fraunces", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-meta: "Instrument Sans", sans-serif;
+
+  --text-h1: clamp(3rem, 1.5rem + 6vw, 8rem);
+}
+
+.dark {
+  --color-background: hsl(26, 27%, 10%);
+  --color-foreground: hsl(39, 41%, 92%);
+  --color-muted-foreground: hsl(35, 17%, 60%);
+  --color-border: hsla(39, 41%, 92%, 0.15);
+  --color-surface: hsl(26, 27%, 12%);
+  
+  --color-primary: hsl(39, 41%, 92%);
+  --color-primary-foreground: hsl(26, 27%, 10%);
+  --color-primary-hover: hsl(39, 41%, 80%);
+  
+  --color-secondary: hsl(39, 59%, 45%);
+  --color-secondary-foreground: hsl(39, 41%, 92%);
+  --color-secondary-hover: hsl(39, 59%, 55%);
+  
+  --color-accent: hsl(16, 77%, 54%);
+  --color-accent-dark: hsl(16, 73%, 45%);
+  
+  --color-dark: hsl(39, 41%, 92%);
+  --color-dark-foreground: hsl(26, 27%, 10%);
+  --color-dark-muted: hsl(29, 17%, 40%);
+  --color-dark-border: hsla(26, 27%, 10%, 0.2);
+}
+
+@theme {
+  --text-h2: clamp(1.75rem, 1.25rem + 2.5vw, 3rem);
+  --text-h3: clamp(1.25rem, 1.1rem + 0.8vw, 1.625rem);
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
+  --font-meta: var(--font-meta);
+
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-border: var(--color-border);
+  --color-surface: var(--color-surface);
+
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-primary-hover: var(--color-primary-hover);
+
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-secondary-hover: var(--color-secondary-hover);
+
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+
+  --color-dark: var(--color-dark);
+  --color-dark-foreground: var(--color-dark-foreground);
+  --color-dark-muted: var(--color-dark-muted);
+  --color-dark-border: var(--color-dark-border);
+
+  --text-h1: var(--text-h1);
+  --text-h1--line-height: 0.92;
+  --text-h2: var(--text-h2);
+  --text-h2--line-height: 1.06;
+  --text-h3: var(--text-h3);
+  --text-h3--line-height: 1.3;
+}
+
+html, body {
+  overflow-x: clip;
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.prose {
+  --tw-prose-body: var(--color-foreground);
+  --tw-prose-headings: var(--color-foreground);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-foreground);
+  --tw-prose-bullets: var(--color-accent);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+summary {
+  list-style: none;
+}
+
+/* Custom transitions for accordions */
+details[open] summary .icon-plus {
+  display: none;
+}
+details:not([open]) summary .icon-minus {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
