@@ -1192,7 +1192,7 @@ footer {
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
 
-.reveal.in {
+.reveal.in, .js .reveal.in, .js .reveal.active {
   opacity: 1;
   transform: none;
 }
