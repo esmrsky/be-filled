@@ -2,9 +2,17 @@
   "version": 1,
   "projectId": "69d6de2c-dd3f-427f-8adf-18b7e3c4aa22",
   "projectName": "The Living Spring",
-  "pulledAt": "2026-06-12T06:36:54.521Z",
+  "pulledAt": "2026-06-12T06:40:41.192Z",
   "apiUrl": "https://pagesmith.ai/api/external",
   "files": {
+    "src/scripts/be-filled.js": {
+      "sha256": "e428d55c456007fdf832b7da6035d4fe4655a1c59057275898aca936e9ba9bfb",
+      "size": 5325
+    },
+    "src/styles/be-filled.css": {
+      "sha256": "68937ea8daea35e988711a77fa93353a530715707acd7c4f6fe20e0cdd27dc66",
+      "size": 25041
+    },
     "src/components/Footer.astro": {
       "sha256": "c6dd975203031066c981a4caee5ec647a40afe8eb5db490e81366161c9f66deb",
       "size": 173
@@ -60,14 +68,6 @@
     "src/pages/index.astro": {
       "sha256": "dbe6c97e58753cc146a03b97b0909f703b5ee07e94d740270a9d803c54bbcf41",
       "size": 1157
-    },
-    "src/scripts/be-filled.js": {
-      "sha256": "9cae339ff04b175df30d7c405289cef958683e6da0e3179081191fd1a8b9202e",
-      "size": 5195
-    },
-    "src/styles/be-filled.css": {
-      "sha256": "90f49bd17163470e74403406d363ccd18e109966b8c380ff55c1a3250db512ad",
-      "size": 25005
     },
     "package.json": {
       "sha256": "2b6e001c0c3f9365b08d687fd4b246935e37715a5e43ecb41d8d4f2f795abf7c",
