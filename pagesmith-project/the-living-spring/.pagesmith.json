@@ -2,44 +2,48 @@
   "version": 1,
   "projectId": "69d6de2c-dd3f-427f-8adf-18b7e3c4aa22",
   "projectName": "The Living Spring",
-  "pulledAt": "2026-06-16T20:59:27.995Z",
+  "pulledAt": "2026-06-16T21:18:12.291Z",
   "apiUrl": "https://pagesmith.ai/api/external",
   "files": {
+    "src/components/Navigation.astro": {
+      "sha256": "298c18b532cdf01b27cea36c271f678fd026e39fa3476c0eff2058457b280636",
+      "size": 1159
+    },
+    "src/components/home/Ache.astro": {
+      "sha256": "f94431d381e73a8c705488d745243609ec0ffaa5ee089471fb7675bc41d2052b",
+      "size": 11254
+    },
+    "src/components/home/Tasted.astro": {
+      "sha256": "b9539c2fc0df99bff85f7d807be3272601f5ac330a05a7f28472d62d30bd15c7",
+      "size": 6333
+    },
+    "src/layouts/BaseLayout.astro": {
+      "sha256": "41c7160ed6b49f140412661c89626735dc143bc16850df73a497d96a0dcc3247",
+      "size": 5414
+    },
+    "src/scripts/be-filled.js": {
+      "sha256": "735b7ac3b880487fec9fb224f5dc05ae5c3362eabb77a713ac9b0c4b09a11d4d",
+      "size": 5947
+    },
+    "src/styles/be-filled.css": {
+      "sha256": "b00d0df099f00a7ebf5c1b2232bb04f3660ba576361c2cf49b5ff8d3682f79ad",
+      "size": 27748
+    },
     "src/components/home/Hero.astro": {
       "sha256": "369cef3cd650f7c9827dd4b4bdaa5cf12804ad059033169ce52c96a23bffd122",
       "size": 4357
-    },
-    "src/styles/be-filled.css": {
-      "sha256": "bba8511beb4c6274128ef73e253971e18a468b48c64080c6e2ee2fba28a9f4e0",
-      "size": 26915
     },
     "src/components/home/QuoteBanner.astro": {
       "sha256": "850443a438730198877ffb12cf7eea4f4738b215adf5cc7c9d7b514bf8bb5d46",
       "size": 229
     },
-    "src/scripts/be-filled.js": {
-      "sha256": "d6a3d63d4eb58e7f749d8b46cd75ac2b6316836b87f150c13252d87ad045d249",
-      "size": 5977
-    },
     "src/components/home/Slots.astro": {
       "sha256": "ec316696a2a8c68424feb133316514c70f08b8cad11c1bfca0ac97e128bc357c",
       "size": 15848
     },
-    "src/layouts/BaseLayout.astro": {
-      "sha256": "9b8e453d586728c0c94439932e43902fc213cecea612b260b33e5f39b9a42f47",
-      "size": 4996
-    },
     "src/components/Footer.astro": {
       "sha256": "c6dd975203031066c981a4caee5ec647a40afe8eb5db490e81366161c9f66deb",
       "size": 173
-    },
-    "src/components/Navigation.astro": {
-      "sha256": "3a59e201e9cef10ac46a2a932d30d0a0034c1c2746200cba8f2542115bf83e60",
-      "size": 1534
-    },
-    "src/components/home/Ache.astro": {
-      "sha256": "136b00c082d46a13f10fff44495b9eda0a16b3b15e1be495afe52bf2d92acf9d",
-      "size": 8328
     },
     "src/components/home/Feast.astro": {
       "sha256": "326605abe8a5130f0288fbf2ea4467e089c4f5a9090ba7612154fd85b9cfd03b",
@@ -64,10 +68,6 @@
     "src/components/home/Riverbed.astro": {
       "sha256": "d802831281a6fcaceaa4f49914e7a7ce5fe9c62fea8c0a15032c2fe5b9fef5f1",
       "size": 6319
-    },
-    "src/components/home/Tasted.astro": {
-      "sha256": "2d75379ee1535e2a7f425090883838bd6bdb499cde98b32bba90ee7ef40314cd",
-      "size": 6133
     },
     "src/pages/index.astro": {
       "sha256": "dbe6c97e58753cc146a03b97b0909f703b5ee07e94d740270a9d803c54bbcf41",

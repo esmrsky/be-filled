@@ -44,13 +44,12 @@ const htmlLang = lang ?? Astro.currentLocale ?? SITE.lang;
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
           return localStorage.getItem('theme');
         }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark';
-        }
         return 'light';
       })();
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
       }
       window.localStorage.setItem('theme', theme);
     </script>
@@ -162,5 +161,11 @@ const htmlLang = lang ?? Astro.currentLocale ?? SITE.lang;
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
           .forEach((el) => revealObserver.observe(el));
       </script>
+      <button class="theme-toggle" id="theme" aria-label="Toggle theme">
+        <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/>
+        </svg>
+        <span id="theme-text">Dark mode</span>
+      </button>
     </body>
   </html>
