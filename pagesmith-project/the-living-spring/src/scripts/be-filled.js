@@ -135,9 +135,18 @@
   var stepIds = ["hunt","slots","split","loop","fountain","turn","riverbed","feast","objections"];
   var steps = Array.prototype.slice.call(document.querySelectorAll(".step"));
   var sections = stepIds.map(function (id) { return document.getElementById(id); });
+  var stepper = document.getElementById("stepper");
   function activate(id) {
     steps.forEach(function (s) {
-      s.classList.toggle("active", s.getAttribute("href") === "#" + id);
+      var isActive = s.getAttribute("href") === "#" + id;
+      s.classList.toggle("active", isActive);
+      if (isActive && stepper) {
+        var containerWidth = stepper.clientWidth;
+        var stepLeft = s.offsetLeft;
+        var stepWidth = s.clientWidth;
+        var targetScroll = stepLeft - (containerWidth / 2) + (stepWidth / 2);
+        stepper.scrollTo({ left: targetScroll, behavior: "smooth" });
+      }
     });
   }
   if ("IntersectionObserver" in window) {
@@ -147,7 +156,6 @@
     sections.forEach(function (s) { if (s) spy.observe(s); });
   }
   // keep active step scrolled into view in the horizontal nav
-  var stepper = document.getElementById("stepper");
   steps.forEach(function (s) {
     s.addEventListener("click", function () {
       setTimeout(function () { s.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); }, 50);
