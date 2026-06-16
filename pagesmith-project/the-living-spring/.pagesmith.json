@@ -2,9 +2,13 @@
   "version": 1,
   "projectId": "69d6de2c-dd3f-427f-8adf-18b7e3c4aa22",
   "projectName": "The Living Spring",
-  "pulledAt": "2026-06-16T20:49:16.165Z",
+  "pulledAt": "2026-06-16T20:59:27.995Z",
   "apiUrl": "https://pagesmith.ai/api/external",
   "files": {
+    "src/components/home/Hero.astro": {
+      "sha256": "369cef3cd650f7c9827dd4b4bdaa5cf12804ad059033169ce52c96a23bffd122",
+      "size": 4357
+    },
     "src/styles/be-filled.css": {
       "sha256": "bba8511beb4c6274128ef73e253971e18a468b48c64080c6e2ee2fba28a9f4e0",
       "size": 26915
@@ -52,10 +56,6 @@
     "src/components/home/Heart.astro": {
       "sha256": "f3b6dc75959c696d8576048eedc612cd4571a9ae594cfa714ff991bc86d20744",
       "size": 4150
-    },
-    "src/components/home/Hero.astro": {
-      "sha256": "10f3b84dea662a33abefeaddbcfb4f6d71c695a3cf5bb36f297135dd3777f2ff",
-      "size": 4451
     },
     "src/components/home/Objections.astro": {
       "sha256": "70686175ca8f12a972426b19320931e6b4ff92aa69396f7a3562d6e584c8c5c3",
