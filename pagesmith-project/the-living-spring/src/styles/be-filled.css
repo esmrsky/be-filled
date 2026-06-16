@@ -784,7 +784,12 @@ html[data-theme="light"] .exp-tag.scripture {
 }
 
 .slot-col.fake h5, .slot-col.fake-industries h5 {
-  color: var(--ink-faint);
+  color: #c0392b;
+}
+
+[data-theme="dark"] .slot-col.fake h5,
+[data-theme="dark"] .slot-col.fake-industries h5 {
+  color: #e74c3c;
 }
 
 .slot-col p {
@@ -797,6 +802,11 @@ html[data-theme="light"] .exp-tag.scripture {
 
 .slot-col.fake p, .slot-col.fake-industries p {
   color: var(--ink-dim);
+}
+
+.slot-col h5 span.col-icon {
+  margin-right: 0.3em;
+  font-style: normal;
 }
 
 /* per-slot color */
@@ -872,9 +882,15 @@ html[data-theme="light"] .exp-tag.scripture {
   letter-spacing: 0.01em;
   padding: 0.26rem 0.54rem;
   border-radius: 999px;
-  color: var(--ink-faint);
-  background: color-mix(in srgb, var(--ink-faint) 9%, transparent);
-  border: 1px solid var(--rule);
+  color: #c0392b;
+  background: color-mix(in srgb, #c0392b 8%, transparent);
+  border: 1px solid color-mix(in srgb, #c0392b 25%, transparent);
+}
+
+[data-theme="dark"] .slot-fakes span {
+  color: #e74c3c;
+  background: color-mix(in srgb, #e74c3c 10%, transparent);
+  border-color: color-mix(in srgb, #e74c3c 25%, transparent);
 }
 
 .slot-egs {
@@ -896,9 +912,15 @@ html[data-theme="light"] .exp-tag.scripture {
 }
 
 .slot-egs.gray span {
-  color: var(--ink-dim);
-  background: color-mix(in srgb, var(--ink-faint) 12%, transparent);
-  border: 1px solid var(--rule);
+  color: #c0392b;
+  background: color-mix(in srgb, #c0392b 8%, transparent);
+  border: 1px solid color-mix(in srgb, #c0392b 25%, transparent);
+}
+
+[data-theme="dark"] .slot-egs.gray span {
+  color: #e74c3c;
+  background: color-mix(in srgb, #e74c3c 10%, transparent);
+  border-color: color-mix(in srgb, #e74c3c 25%, transparent);
 }
 
 /* epigraph */
