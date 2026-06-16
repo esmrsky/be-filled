@@ -647,6 +647,7 @@ html[data-theme="light"] .exp-tag.scripture {
   display: flex;
   flex-direction: column;
   height: 100%;
+  scroll-margin-top: 110px;
 }
 
 .slot-need {
@@ -674,8 +675,12 @@ html[data-theme="light"] .exp-tag.scripture {
 }
 
 @media (max-width: 767px) {
+  .slots-grid {
+    grid-template-columns: 1fr;
+  }
   .slot[data-open="true"] {
     order: initial;
+    grid-column: auto;
   }
 }
 
@@ -1998,6 +2003,11 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       });
       slot.dataset.open = open ? "true" : "false";
       slot.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        setTimeout(function () {
+          slot.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      }
     }
     function runToggleWithTransition() {
       if (document.startViewTransition) {

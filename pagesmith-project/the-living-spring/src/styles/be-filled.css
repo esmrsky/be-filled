@@ -636,6 +636,7 @@ html[data-theme="light"] .exp-tag.scripture {
   display: flex;
   flex-direction: column;
   height: 100%;
+  scroll-margin-top: 110px;
 }
 
 .slot-need {
@@ -663,8 +664,12 @@ html[data-theme="light"] .exp-tag.scripture {
 }
 
 @media (max-width: 767px) {
+  .slots-grid {
+    grid-template-columns: 1fr;
+  }
   .slot[data-open="true"] {
     order: initial;
+    grid-column: auto;
   }
 }
 

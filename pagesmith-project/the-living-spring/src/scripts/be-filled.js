@@ -30,6 +30,11 @@
       });
       slot.dataset.open = open ? "true" : "false";
       slot.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        setTimeout(function () {
+          slot.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      }
     }
     function runToggleWithTransition() {
       if (document.startViewTransition) {
