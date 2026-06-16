@@ -2,12 +2,12 @@
   "version": 1,
   "projectId": "69d6de2c-dd3f-427f-8adf-18b7e3c4aa22",
   "projectName": "The Living Spring",
-  "pulledAt": "2026-06-16T20:43:55.748Z",
+  "pulledAt": "2026-06-16T20:49:16.165Z",
   "apiUrl": "https://pagesmith.ai/api/external",
   "files": {
     "src/styles/be-filled.css": {
-      "sha256": "14bb2f6c587ba441418172ed19c23ddd30a1017c17b9eef7265ac99703a9911d",
-      "size": 26914
+      "sha256": "bba8511beb4c6274128ef73e253971e18a468b48c64080c6e2ee2fba28a9f4e0",
+      "size": 26915
     },
     "src/components/home/QuoteBanner.astro": {
       "sha256": "850443a438730198877ffb12cf7eea4f4738b215adf5cc7c9d7b514bf8bb5d46",
