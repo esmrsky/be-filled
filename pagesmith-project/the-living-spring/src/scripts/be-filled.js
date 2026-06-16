@@ -24,12 +24,28 @@
   document.querySelectorAll(".slot").forEach(function (slot) {
     function toggle() {
       var open = slot.dataset.open !== "true";
+      var isMobile = window.innerWidth < 768;
+      var rectBefore, scrollTopBefore;
+      if (isMobile) {
+        rectBefore = slot.getBoundingClientRect();
+        scrollTopBefore = window.scrollY;
+      }
+
       // close siblings for a clean single-open feel
       slot.parentElement.querySelectorAll(".slot").forEach(function (s) {
         s.dataset.open = "false"; s.setAttribute("aria-expanded", "false");
       });
       slot.dataset.open = open ? "true" : "false";
       slot.setAttribute("aria-expanded", open ? "true" : "false");
+
+      if (isMobile) {
+        var rectAfter = slot.getBoundingClientRect();
+        var shift = rectAfter.top - rectBefore.top;
+        if (Math.abs(shift) > 1) {
+          window.scrollTo(0, scrollTopBefore + shift);
+        }
+      }
+
       if (open) {
         setTimeout(function () {
           slot.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -37,7 +53,8 @@
       }
     }
     function runToggleWithTransition() {
-      if (document.startViewTransition) {
+      var isMobile = window.innerWidth < 768;
+      if (document.startViewTransition && !isMobile) {
         document.startViewTransition(toggle);
       } else {
         toggle();
