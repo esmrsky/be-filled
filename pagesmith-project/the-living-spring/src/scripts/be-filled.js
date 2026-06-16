@@ -24,12 +24,6 @@
   document.querySelectorAll(".slot").forEach(function (slot) {
     function toggle() {
       var open = slot.dataset.open !== "true";
-      var isMobile = window.innerWidth < 768;
-      var rectBefore, scrollTopBefore;
-      if (isMobile) {
-        rectBefore = slot.getBoundingClientRect();
-        scrollTopBefore = window.scrollY;
-      }
 
       // close siblings for a clean single-open feel
       slot.parentElement.querySelectorAll(".slot").forEach(function (s) {
@@ -38,17 +32,13 @@
       slot.dataset.open = open ? "true" : "false";
       slot.setAttribute("aria-expanded", open ? "true" : "false");
 
-      if (isMobile) {
-        var rectAfter = slot.getBoundingClientRect();
-        var shift = rectAfter.top - rectBefore.top;
-        if (Math.abs(shift) > 1) {
-          window.scrollTo(0, scrollTopBefore + shift);
-        }
-      }
-
       if (open) {
+        // Let the DOM settle after siblings collapse, then scroll card to top (below sticky stepper)
         setTimeout(function () {
-          slot.scrollIntoView({ behavior: "smooth", block: "start" });
+          var stepperEl = document.getElementById("stepper");
+          var offset = stepperEl ? stepperEl.offsetHeight : 0;
+          var top = slot.getBoundingClientRect().top + window.scrollY - offset - 8;
+          window.scrollTo({ top: top, behavior: "smooth" });
         }, 80);
       }
     }
