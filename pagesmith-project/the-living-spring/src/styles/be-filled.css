@@ -117,6 +117,7 @@ body::after {
    TOP BAR
    ============================================================ */
 .topbar {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 40;
@@ -180,6 +181,7 @@ body::after {
    STEPPER NAV (the loop)
    ============================================================ */
 .stepper {
+  position: -webkit-sticky;
   position: sticky;
   top: 56px;
   z-index: 30;
@@ -1361,16 +1363,10 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
   text-transform: uppercase;
   cursor: pointer;
   box-shadow: var(--shadow);
-  transition: transform 0.4s var(--ease), opacity 0.4s var(--ease), border-color 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
 }
 
-.theme-toggle.hidden {
-  transform: translateY(80px);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.theme-toggle:hover:not(.hidden) {
+.theme-toggle:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
 }
@@ -1378,5 +1374,16 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
 .theme-toggle svg {
   width: 14px;
   height: 14px;
+}
+
+@media (max-width: 767px) {
+  .theme-toggle {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .theme-toggle:hover {
+    transform: translateX(-50%) translateY(-2px);
+  }
 }
 

@@ -153,39 +153,4 @@
       setTimeout(function () { s.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); }, 50);
     });
   });
-
-  /* ---------- theme toggle visibility scroll handler ---------- */
-  var themeToggle = document.getElementById("theme");
-  var hideTimeout;
-  var isHovered = false;
-
-  function showToggle() {
-    if (themeToggle) {
-      themeToggle.classList.remove("hidden");
-    }
-    clearTimeout(hideTimeout);
-    if (!isHovered) {
-      hideTimeout = setTimeout(hideToggle, 2500);
-    }
-  }
-
-  function hideToggle() {
-    if (themeToggle && !isHovered) {
-      themeToggle.classList.add("hidden");
-    }
-  }
-
-  window.addEventListener("scroll", showToggle);
-  
-  if (themeToggle) {
-    themeToggle.addEventListener("mouseenter", function() {
-      isHovered = true;
-      showToggle();
-    });
-    themeToggle.addEventListener("mouseleave", function() {
-      isHovered = false;
-      showToggle();
-    });
-    hideTimeout = setTimeout(hideToggle, 3000);
-  }
 })();
