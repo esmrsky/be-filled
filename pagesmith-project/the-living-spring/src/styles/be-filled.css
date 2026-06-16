@@ -662,6 +662,12 @@ html[data-theme="light"] .exp-tag.scripture {
   height: auto;
 }
 
+@media (max-width: 767px) {
+  .slot[data-open="true"] {
+    order: initial;
+  }
+}
+
 .slot-num {
   font-family: var(--mono);
   font-size: 0.62rem;
