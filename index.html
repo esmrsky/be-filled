@@ -513,6 +513,31 @@ html[data-theme="light"] .exp-tag.scripture {
   color: var(--accent);
 }
 
+@media (max-width: 640px) {
+  .exp-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.45rem 0.8rem;
+    align-items: center;
+  }
+  
+  .exp-tag {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+  
+  .exp-label {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .exp-chev {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
 .exp-body {
   display: grid;
   grid-template-rows: 0fr;
