@@ -72,7 +72,7 @@ body {
   font-size: 1.18rem;
   letter-spacing: 0.003em;
   transition: background 0.5s var(--ease), color 0.5s var(--ease);
-  overflow-x: hidden;
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
