@@ -2,12 +2,16 @@
   "version": 1,
   "projectId": "69d6de2c-dd3f-427f-8adf-18b7e3c4aa22",
   "projectName": "The Living Spring",
-  "pulledAt": "2026-06-16T20:29:35.012Z",
+  "pulledAt": "2026-06-16T20:39:01.678Z",
   "apiUrl": "https://pagesmith.ai/api/external",
   "files": {
+    "src/components/home/QuoteBanner.astro": {
+      "sha256": "850443a438730198877ffb12cf7eea4f4738b215adf5cc7c9d7b514bf8bb5d46",
+      "size": 229
+    },
     "src/styles/be-filled.css": {
-      "sha256": "64a8eed42ff060bcf1568c4777d36da3751eeef7c329383d13b3a09d6107ed9e",
-      "size": 26880
+      "sha256": "fd197e7961381084b5b89f0003ef4403bc0cbab99f0a0963cf493d44fc793808",
+      "size": 26900
     },
     "src/scripts/be-filled.js": {
       "sha256": "d6a3d63d4eb58e7f749d8b46cd75ac2b6316836b87f150c13252d87ad045d249",
@@ -56,10 +60,6 @@
     "src/components/home/Objections.astro": {
       "sha256": "70686175ca8f12a972426b19320931e6b4ff92aa69396f7a3562d6e584c8c5c3",
       "size": 4000
-    },
-    "src/components/home/QuoteBanner.astro": {
-      "sha256": "8a5b8069633f6b441262dde4931f387a6ef22c6ac9a93baf4f8d29e78badf64a",
-      "size": 265
     },
     "src/components/home/Riverbed.astro": {
       "sha256": "d802831281a6fcaceaa4f49914e7a7ce5fe9c62fea8c0a15032c2fe5b9fef5f1",
