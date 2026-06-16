@@ -627,26 +627,112 @@ html[data-theme="light"] .exp-tag.scripture {
   color: var(--ink-dim);
 }
 
-/* unbundling / list rows */
-.swap {
-  font-family: var(--ui);
-  font-size: 0.98rem;
-  line-height: 1.5;
-  margin: 0.5rem 0;
+/* unbundling / comparison grid */
+.unb-grid {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
 }
 
-.swap b {
-  color: var(--ink);
+.unb-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--card-soft);
+}
+
+.unb-label {
+  grid-column: 1 / -1;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   font-weight: 600;
+  color: var(--ink);
+  padding: 0.5rem 0.85rem 0.38rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-.swap span {
+.unb-before {
+  padding: 0.6rem 0.85rem;
+  border-right: 1px solid var(--rule);
+}
+
+.unb-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.55rem;
   color: var(--accent);
+  font-size: 1rem;
+  flex-shrink: 0;
+  border-right: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
 }
 
-.swap em {
-  color: var(--ink-dim);
-  font-style: normal;
+.unb-after {
+  padding: 0.6rem 0.85rem;
+}
+
+.unb-col-heads {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  margin-bottom: 0.2rem;
+  padding: 0 0 0.1rem;
+}
+
+.unb-col-heads span {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.unb-col-heads span:last-child {
+  color: #c0392b;
+}
+
+.unb-col-heads span:nth-child(2) {
+  padding: 0 0.55rem;
+}
+
+.unb-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+}
+
+.unb-tags span {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.02em;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+}
+
+.unb-before .unb-tags span {
+  color: var(--slot);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  --slot: var(--accent);
+}
+
+.unb-after .unb-tags span {
+  color: #c0392b;
+  background: color-mix(in srgb, #c0392b 8%, transparent);
+  border: 1px solid color-mix(in srgb, #c0392b 22%, transparent);
+}
+
+[data-theme="dark"] .unb-after .unb-tags span {
+  color: #e74c3c;
+  background: color-mix(in srgb, #e74c3c 10%, transparent);
+  border-color: color-mix(in srgb, #e74c3c 25%, transparent);
 }
 
 /* ============================================================
@@ -1318,11 +1404,23 @@ html[data-theme="light"] .exp-tag.scripture {
 
 .close-line {
   font-family: var(--display);
-  font-weight: 340;
-  font-size: clamp(3.4rem, 11vw, 6.2rem);
-  line-height: 1.28;
-  letter-spacing: -0.03em;
-  margin-bottom: 2.2rem;
+  font-weight: 300;
+  font-size: clamp(3.8rem, 12vw, 7.2rem);
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+  margin-bottom: 2.6rem;
+  position: relative;
+}
+
+.close-line::before {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: var(--accent);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+  opacity: 0.7;
 }
 
 .close-line em {
@@ -1809,13 +1907,64 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
             <svg class="exp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
           </button>
           <div class="exp-body"><div class="exp-inner"><div class="exp-content">
-            <p class="swap"><b>Food</b> — movement + community + competence + meaning + body <span>→</span> <em>the gym, the restaurant, the Facebook group</em></p>
-            <p class="swap"><b>Music</b> — participation + belonging + competence + rhythm + memory <span>→</span> <em>solo consumption, made by professionals, encountered as content</em></p>
-            <p class="swap"><b>Apprenticeship</b> — competence + connection + attention + meaning <span>→</span> <em>classroom decoupled from outcome, office decoupled from people</em></p>
-            <p class="swap"><b>Early childhood</b> — touch + belonging + competence + meaning <span>→</span> <em>hospital + daycare + mom-fluencers + anxious parenting books</em></p>
-            <p class="swap"><b>Worship</b> — meaning + community + rest + body + belonging <span>→</span> <em>Sunday module + therapy + yoga + meditation apps</em></p>
-            <p class="swap"><b>Neighborhood</b> — connection + rest + creation + belonging <span>→</span> <em>single-use zoning + long commutes + Nextdoor app + ring cameras</em></p>
-            <p class="swap"><b>Leisure</b> — rest + connection + participation + rhythm <span>→</span> <em>streaming queues + sports betting + parasocial podcasts + scrolling in bed</em></p>
+            <div class="unb-grid">
+
+              <div class="unb-col-heads">
+                <span>What it was</span>
+                <span></span>
+                <span>What it became</span>
+              </div>
+
+              <div class="unb-row">
+                <div class="unb-label">Food</div>
+                <div class="unb-before"><div class="unb-tags"><span>movement</span><span>community</span><span>competence</span><span>meaning</span><span>body</span></div></div>
+                <div class="unb-arrow">→</div>
+                <div class="unb-after"><div class="unb-tags"><span>the gym</span><span>the restaurant</span><span>the Facebook group</span></div></div>
+              </div>
+
+              <div class="unb-row">
+                <div class="unb-label">Music</div>
+                <div class="unb-before"><div class="unb-tags"><span>participation</span><span>belonging</span><span>competence</span><span>rhythm</span><span>memory</span></div></div>
+                <div class="unb-arrow">→</div>
+                <div class="unb-after"><div class="unb-tags"><span>solo consumption</span><span>made by professionals</span><span>encountered as content</span></div></div>
+              </div>
+
+              <div class="unb-row">
+                <div class="unb-label">Apprenticeship</div>
+                <div class="unb-before"><div class="unb-tags"><span>competence</span><span>connection</span><span>attention</span><span>meaning</span></div></div>
+                <div class="unb-arrow">→</div>
+                <div class="unb-after"><div class="unb-tags"><span>classroom decoupled from outcome</span><span>office decoupled from people</span></div></div>
+              </div>
+
+              <div class="unb-row">
+                <div class="unb-label">Early childhood</div>
+                <div class="unb-before"><div class="unb-tags"><span>touch</span><span>belonging</span><span>competence</span><span>meaning</span></div></div>
+                <div class="unb-arrow">→</div>
+                <div class="unb-after"><div class="unb-tags"><span>hospital</span><span>daycare</span><span>mom-fluencers</span><span>anxious parenting books</span></div></div>
+              </div>
+
+              <div class="unb-row">
+                <div class="unb-label">Worship</div>
+                <div class="unb-before"><div class="unb-tags"><span>meaning</span><span>community</span><span>rest</span><span>body</span><span>belonging</span></div></div>
+                <div class="unb-arrow">→</div>
+                <div class="unb-after"><div class="unb-tags"><span>Sunday module</span><span>therapy</span><span>yoga</span><span>meditation apps</span></div></div>
+              </div>
+
+              <div class="unb-row">
+                <div class="unb-label">Neighborhood</div>
+                <div class="unb-before"><div class="unb-tags"><span>connection</span><span>rest</span><span>creation</span><span>belonging</span></div></div>
+                <div class="unb-arrow">→</div>
+                <div class="unb-after"><div class="unb-tags"><span>single-use zoning</span><span>long commutes</span><span>Nextdoor app</span><span>ring cameras</span></div></div>
+              </div>
+
+              <div class="unb-row">
+                <div class="unb-label">Leisure</div>
+                <div class="unb-before"><div class="unb-tags"><span>rest</span><span>connection</span><span>participation</span><span>rhythm</span></div></div>
+                <div class="unb-arrow">→</div>
+                <div class="unb-after"><div class="unb-tags"><span>streaming queues</span><span>sports betting</span><span>parasocial podcasts</span><span>scrolling in bed</span></div></div>
+              </div>
+
+            </div>
           </div></div></div>
         </div>
         <div class="exp">

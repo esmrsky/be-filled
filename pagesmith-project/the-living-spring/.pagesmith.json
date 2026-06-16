@@ -2,16 +2,16 @@
   "version": 1,
   "projectId": "69d6de2c-dd3f-427f-8adf-18b7e3c4aa22",
   "projectName": "The Living Spring",
-  "pulledAt": "2026-06-16T22:27:03.493Z",
+  "pulledAt": "2026-06-16T22:33:11.520Z",
   "apiUrl": "https://pagesmith.ai/api/external",
   "files": {
     "src/components/home/Slots.astro": {
-      "sha256": "40aaae2287ca53543d6f7e933b3293b50f2d9107dae3d2c345c0a2fc896263a2",
-      "size": 16652
+      "sha256": "63f21c0a930c2ca252ef64c2661963459a280d6460e68fd6353f1bbacea280bd",
+      "size": 15848
     },
     "src/styles/be-filled.css": {
-      "sha256": "a4fa6ccb6671a3f614f50aa12a3434367d6bfa42d60759a30794c355f9d80f02",
-      "size": 28603
+      "sha256": "cbd072e12177187f896dca172e03eb33019c16574da3e6fbfd5f6c99d5a25534",
+      "size": 31924
     },
     "src/scripts/be-filled.js": {
       "sha256": "8f6417dd30d76234e46400e4534afeb63fc919aed3230d9440bbc6204409b2f0",
