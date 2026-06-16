@@ -33,12 +33,15 @@
       slot.setAttribute("aria-expanded", open ? "true" : "false");
 
       if (open) {
-        // Let the DOM settle after siblings collapse, then scroll card to top (below sticky stepper)
+        // Only scroll if the card's top is above the viewport / behind the sticky stepper
         setTimeout(function () {
           var stepperEl = document.getElementById("stepper");
           var offset = stepperEl ? stepperEl.offsetHeight : 0;
-          var top = slot.getBoundingClientRect().top + window.scrollY - offset - 8;
-          window.scrollTo({ top: top, behavior: "smooth" });
+          var cardTop = slot.getBoundingClientRect().top;
+          if (cardTop < offset) {
+            var scrollTarget = slot.getBoundingClientRect().top + window.scrollY - offset - 8;
+            window.scrollTo({ top: scrollTarget, behavior: "smooth" });
+          }
         }, 80);
       }
     }
