@@ -675,7 +675,24 @@ html[data-theme="light"] .exp-tag.scripture {
 }
 
 .slot[data-open="false"] {
-  height: 180px;
+  height: 240px;
+}
+
+.slot::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(to bottom, transparent, var(--card-soft));
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+  z-index: 5;
+}
+
+.slot[data-open="true"]::after {
+  opacity: 0;
 }
 
 .slot[data-open="true"] {
@@ -721,7 +738,7 @@ html[data-theme="light"] .exp-tag.scripture {
 
 .slot-detail {
   display: grid;
-  grid-template-rows: 0fr;
+  grid-template-rows: 90px;
   transition: grid-template-rows 0.42s var(--ease);
 }
 
