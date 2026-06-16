@@ -1261,8 +1261,8 @@ html[data-theme="light"] .exp-tag.scripture {
 .close-line {
   font-family: var(--display);
   font-weight: 340;
-  font-size: clamp(3rem, 9.5vw, 5.2rem);
-  line-height: 1.15;
+  font-size: clamp(3.4rem, 11vw, 6.2rem);
+  line-height: 1.28;
   letter-spacing: -0.03em;
   margin-bottom: 2.2rem;
 }
@@ -1338,6 +1338,45 @@ footer {
 .exp-content p, .slot-need, .slot-col p, .objection .reply { text-wrap: pretty; }
 .exp-content p { margin-bottom: 1rem; }
 a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visible, .step:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+
+.theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+  font-family: var(--ui);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.4s var(--ease), opacity 0.4s var(--ease), border-color 0.3s var(--ease);
+}
+
+.theme-toggle.hidden {
+  transform: translateY(80px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-toggle:hover:not(.hidden) {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.theme-toggle svg {
+  width: 14px;
+  height: 14px;
+}
 
 </style>
 </head>
@@ -2235,6 +2274,41 @@ a:focus-visible, button:focus-visible, .slot:focus-visible, .exp-head:focus-visi
       setTimeout(function () { s.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); }, 50);
     });
   });
+
+  /* ---------- theme toggle visibility scroll handler ---------- */
+  var themeToggle = document.getElementById("theme");
+  var hideTimeout;
+  var isHovered = false;
+
+  function showToggle() {
+    if (themeToggle) {
+      themeToggle.classList.remove("hidden");
+    }
+    clearTimeout(hideTimeout);
+    if (!isHovered) {
+      hideTimeout = setTimeout(hideToggle, 2500);
+    }
+  }
+
+  function hideToggle() {
+    if (themeToggle && !isHovered) {
+      themeToggle.classList.add("hidden");
+    }
+  }
+
+  window.addEventListener("scroll", showToggle);
+  
+  if (themeToggle) {
+    themeToggle.addEventListener("mouseenter", function() {
+      isHovered = true;
+      showToggle();
+    });
+    themeToggle.addEventListener("mouseleave", function() {
+      isHovered = false;
+      showToggle();
+    });
+    hideTimeout = setTimeout(hideToggle, 3000);
+  }
 })();
 </script>
       <button class="theme-toggle" id="theme" aria-label="Toggle theme">
