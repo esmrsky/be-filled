@@ -1,0 +1,102 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Fullness from '@/components/home/Fullness.astro';
+import Slots from '@/components/home/Slots.astro';
+import Tasted from '@/components/home/Tasted.astro';
+import Ache from '@/components/home/Ache.astro';
+import Fountain from '@/components/home/Fountain.astro';
+import Heart from '@/components/home/Heart.astro';
+import Riverbed from '@/components/home/Riverbed.astro';
+import Feast from '@/components/home/Feast.astro';
+import Objections from '@/components/home/Objections.astro';
+import QuoteBanner from '@/components/home/QuoteBanner.astro';
+import { SITE } from '@/config/site';
+
+import '@/styles/be-filled.css';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+    description: SITE.description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'The Living Spring — A Field Guide to Fullness',
+    description: SITE.description,
+    url: new URL(Astro.url.pathname, SITE.url).toString(),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'This explains everything, so it predicts nothing.',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "It's a lens, not a lab result — and it can rationalize any outcome. Relief proves dependency; lasting relief just proves it wasn't really a counterfeit. Test it as a practice: put the thicker thing in the slot for a season and watch honestly.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'This is just a nicer way of selling me the same religion.',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Warmth can absolutely be a manipulation, and you're right to flinch. So don't trust it as a pitch. Test it as a practice: put the thicker thing in the slot for a season and watch honestly.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: "The good experiences / brain-science don't get you to God.",
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Co-regulation, awe, flow, the warm table — these are available to anyone, and you can pursue integration as an atheist through community, craft, and rest. That the streams trace back to one source is a claim, made in the open — not a theorem the neuroscience proves.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'You\'re romanticizing a past that was also brutal.',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The old integration was often un-chosen and sometimes oppressive. The argument is not go back. It\'s that the unbundling cost us something real, and the pieces can be rebuilt — by choice, with the door left open.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '"Taste and see" is useless to someone who\'s genuinely addicted.',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'If your use has crossed the line where you can\'t stop and it\'s wrecking your life, this frame is a complement to real help, not a replacement for it. Get the help. "You\'re homesick, not addicted" is a reframe to free most people from shame; it is not a diagnosis.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="The Living Spring — A Field Guide to Fullness"
+  description="You were made to be full. Trace any real delight far enough upstream and you reach the same source. Read the short version, or open it all the way down."
+
+  image="https://pagesmith-cdn.com/69d6de2c/images/Social-Share-Image-SEO-(12)-1024.webp">
+  <Hero />
+  <Fullness />
+  <Slots />
+  <Tasted />
+  <Ache />
+  <Fountain />
+  <Heart />
+  <Riverbed />
+  <Feast />
+  <Objections />
+  <QuoteBanner />
+</BaseLayout>
+
+<script>
+  import '../scripts/be-filled.js';
+</script>

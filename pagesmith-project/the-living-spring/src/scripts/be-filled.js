@@ -20,6 +20,16 @@
     });
   });
 
+  /* clicking anywhere on a collapsed card opens it */
+  document.querySelectorAll(".exp").forEach(function (exp) {
+    exp.addEventListener("click", function (e) {
+      if (exp.dataset.open === "true") return;
+      if (e.target.closest(".exp-head")) return;
+      var head = exp.querySelector(".exp-head");
+      if (head) head.click();
+    });
+  });
+
   /* ---------- slots ---------- */
   document.querySelectorAll(".slot").forEach(function (slot) {
     function toggle() {
