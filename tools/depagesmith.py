@@ -39,6 +39,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / "index.html"
 FONTFACE = Path(__file__).resolve().parent / "fontface.css"
+# The estate polish pack (tap highlight, press state, balanced and pretty text). Pagesmith
+# never emits it, so every pull drops it; this puts it back before </head>.
+POLISH = Path(__file__).resolve().parent / "polish-pack.html"
+POLISH_BLOCK = re.compile(r'<style id="polish-pack">.*?</style>', re.S)
 
 SOCIAL_IMAGE = "https://esmrsky.github.io/be-filled/assets/social-share.webp"
 
@@ -63,9 +67,16 @@ UNSPLASH_PRECONNECT = re.compile(
 )
 
 
-def convert(html: str, fontface: str) -> tuple[str, list[str], list[str]]:
+def convert(html: str, fontface: str, polish: str) -> tuple[str, list[str], list[str]]:
     changed: list[str] = []
     problems: list[str] = []
+
+    # The polish pack: replace an older copy, or add it.
+    if polish not in html:
+        html, n = POLISH_BLOCK.subn(lambda m: polish, html)
+        if not n:
+            html = html.replace("</head>", polish + "\n</head>", 1)
+        changed.append("polish pack " + ("updated" if n else "added"))
 
     # Fonts: swap the whole shadowing block for the self-hosted one.
     html, n = PAGESMITH_FONTFACE.subn(lambda m: fontface, html)
@@ -104,14 +115,14 @@ def convert(html: str, fontface: str) -> tuple[str, list[str], list[str]]:
 
 
 def main() -> int:
-    for path in (PAGE, FONTFACE):
+    for path in (PAGE, FONTFACE, POLISH):
         if not path.exists():
             print(f"error: {path} not found", file=sys.stderr)
             return 2
 
     fontface = FONTFACE.read_text(encoding="utf-8").strip()
     original = PAGE.read_text(encoding="utf-8")
-    html, changed, problems = convert(original, fontface)
+    html, changed, problems = convert(original, fontface, POLISH.read_text(encoding="utf-8").strip())
 
     if problems:
         print("error: these rules matched nothing and are not already applied:",
